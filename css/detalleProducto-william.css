@@ -1,0 +1,19 @@
+/*** Media Query de la imagen y descripcion del producto **/
+@media screen and (min-width: 768px){
+    .contenedor-imagen-detalles{
+        width: 75%;
+    }
+    .contenido-descripcion{
+        width: 75%;
+    }
+}
+
+/*** Boton de comprar ***/
+.bonton-de-comprar{
+    font-size:150%;
+}
+
+/*** Color del detalle de marca ***/
+.producto-marca{
+    color: #a6c1ee;
+}
