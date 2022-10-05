@@ -1,5 +1,10 @@
 /* Footer */
 
 footer div.informacion-footer div.redes-footer div.icono-redes a img {
-    width: 1.5rem;
+    width: 2.3rem;
+}
+
+footer div.informacion-footer div.redes-footer div.icono-redes a img:hover {
+    width: 2.5rem;
+
 }
