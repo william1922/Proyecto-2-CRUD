@@ -19,57 +19,40 @@
         <!--Seccion de la imagen y detalle de producto-->
         <div class="d-flex contenedor-imagen-detalles flex-column d-md-flex flex-md-row justify-content-center justify-content-md-center">
             <!--Imagen en responsive-->
-            <div class="align-self-center d-sm-block d-md-none shadow">
+            <div class="align-self-center imagen-responsive d-sm-block d-md-none shadow">
                 <img src="/img/PaginaDetalle-Laptop.png" class="container-fluid px-5 rounded-bottom"
                     alt="imagen del producto">
             </div>
             <!--Fin de imagen en responsive-->
             <!--Inicio de imagen en md-->
-            <div class="d-md-flex flex-md-column d-none justify-content-md-center align-items-md-center d-sm-none d-md-block w-100 shadow-sm">
-                <img src="/img/PaginaDetalle-Laptop.png" class="container-fluid h-75 w-50"
+            <div class="d-md-flex imagen-en-md flex-md-column d-none justify-content-md-center align-items-md-center d-sm-none d-md-block rounded-start shadow-sm">
+                <img src="/img/PaginaDetalle-Laptop.png" class="container-fluid h-75 w-75"
                     alt="imagen del producto">
             </div>
             <!--Fin de imagen en md-->
-            <!--Inicio de los detalles en responsive-->
-            <div class="my-4 container-fluid d-sm-block d-md-none d-flex flex-column">
+            <!--Inicio de los detalles de Producto -->
+            <div class="py-5 shadow-sm rounded-end contenedor-detalles container-fluid d-flex flex-column">
                 <ul type="none">
-                    <li class="producto-marca text-center h1">LG</li>
-                    <li class="h4">Nombre del Producto</li>
-                    <li class="h2"><strong class="h1 text-success fw-bolder">$</strong> 9999</li>
-                    <li class="h4">Categoria</li>
-                    <li class="h4 d-flex flex-row">Stock: <p class="px-3 h3">9</p>
+                    <li class="producto-marca text-center">LG</li>
+                    <li class="producto-nombre">Nombre del Producto</li>
+                    <li class="producto-precio text-danger"><strong class="h1 text-success fw-bolder">$</strong> 9999</li>
+                    <li class="producto-categoria">Categoria</li>
+                    <li class="producto-stock d-flex flex-row">Stock: <p class="px-3">9</p>
                     </li>
                 </ul>
                 <div class="d-flex flex-row pb-2 d-sm-flex flex-md-row justify-content-around">
-                    <button class="btn-success py-3 rounded bonton-de-comprar w-50">COMPRAR</button>
-                    <button class="btn-info py-3 rounded w-25"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
+                    <button class="py-3 rounded boton-de-comprar w-50">COMPRAR</button>
+                    <button class="py-3 boton-de-carrito rounded w-25"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
                 </div>
             </div>
-            <!--Fin de los detalles en responsive-->
-            <!--Inicio de los detalles en md-->
-            <div class="w-50 container-fluid d-none d-flex d-sm-none d-md-block flex-column">
-                <ul type="none">
-                    <li class="producto-marca text-center h1">LG</li>
-                    <li class="h4">Nombre del Producto</li>
-                    <li class="h2 text-danger"><strong class="h1 text-success fw-bolder">$</strong> 9,999</li>
-                    <li class="h4">Categoria</li>
-                    <li class="h4 d-flex flex-row">Stock: <p class="px-3 h3">9</p>
-                    </li>
-                </ul>
-                <div class="d-flex flex-row pb-2 w-100 d-sm-flex flex-md-row justify-content-center">
-                    <button id="boton-comprar" class="btn-success bonton-de-comprar py-1 container-fluid rounded col-8">COMPRAR</button>
-                    <button class="btn-info py-1 container-fluid rounded col-3"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
-                </div>
-            </div>
-            <!--Fin de los detalles en md-->
+             <!--Fin de los detalles de Producto -->
             <hr class="d-md-none">
         </div>
         <!--Fin de seccion de la imagen y detalle de producto-->
         <!--Inicio de seccion de descripcion-->
-        <hr class="d-none hr-sobre-descripcion d-flex d-sm-none d-md-block">
-        <div class="d-flex contenido-descripcion flex-column justify-content-center align-items-center">
-            <h1 class="text-center">Descripcion</h1>
-            <p class="h5 text-center my-3 mx-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti asperiores fugiat ut,
+        <div class="d-flex rounded contenido-descripcion py-5 flex-column justify-content-center align-items-center">
+            <p class="text-center titulo-descripcion">Descripcion</p>
+            <p class="text-descripcion text-center my-3 mx-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti asperiores fugiat ut,
                 nam quibusdam perspiciatis reprehenderit sed? Reprehenderit voluptates dolorem unde doloremque modi
                 nostrum, at aut libero ipsa quo animi.</p>
         </div>
