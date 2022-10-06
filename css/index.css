@@ -1,10 +1,31 @@
+
+header nav.navbar{
+    /* background:#ffe259 ; */
+    background: linear-gradient(to bottom,#ffa751,#ffe259)
+}
+
+
+/* Pgina principal */
+img.carrito{
+    width: 2rem;
+}
+
+a.link-carrito:hover{
+    background-color: darkgray;
+}
+
 /* Footer */
 
 footer div.informacion-footer div.redes-footer div.icono-redes a img {
     width: 2.3rem;
+    transition: all 0.5s;
 }
 
 footer div.informacion-footer div.redes-footer div.icono-redes a img:hover {
-    width: 2.5rem;
+    /* width: 2.5rem;
+    position: relative;
+     */
+    transform: scale(1.5);
+    
 
 }
