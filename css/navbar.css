@@ -1,0 +1,57 @@
+
+/*----- header --------- */
+
+
+
+header nav.navbar{
+    /* background:#ffe259 ; */
+    background: linear-gradient(to bottom,#ffa751,#ffe259)
+}
+
+header nav.navbar img.navbar-logo{
+    width: 6rem;
+}
+
+
+button.navbar-toggler{
+    color: black;
+}
+
+a.navbar-brand {
+    color: rgb(41, 52, 98);
+    font-size: 1.8rem;
+}
+
+
+
+a.navbar-brand:hover{
+    color: rgb(214, 28, 78);
+}
+
+div.nav-1-opciones a.nav-link{
+    font-size: 1.1rem;
+    color:black
+}
+
+div.nav-1-opciones a.nav-link:hover{
+    color: rgb(214, 28, 78);
+    /* border-bottom: 1px solid rgb(214, 28, 78) ; */
+}
+
+
+div.opciones-categorias a.navbar-brand:hover{
+    color: rgb(214, 28, 78)
+}
+
+
+ul.dropdown-menu li a:hover{
+   background-color: rgba(240, 224, 84, 0.76);
+}
+
+
+
+
+
+
+
+

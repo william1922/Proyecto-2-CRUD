@@ -1,0 +1,13 @@
+
+
+
+
+/* Pgina principal */
+img.carrito{
+    width: 2rem;
+}
+
+a.link-carrito:hover{
+    background-color: darkgray;
+}
+
