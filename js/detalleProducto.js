@@ -1,3 +1,4 @@
+/* Selecciono los elementos que se modificaran */
 const imagenProducto = document.querySelector('#imagen-de-producto');
 const marcaDeProducto = document.querySelector('#marca-de-producto');
 const nombreDeProducto = document.querySelector('#nombre-de-producto');
@@ -8,6 +9,7 @@ const descripcionDeProducto = document.querySelector('#descripcion-de-producto')
 const imagenProductoResponsive = document.querySelector('#imagen-de-producto-responsive');
 let arrayProductos = JSON.parse(localStorage.getItem("productosTienda")) || [];
 
+/* Obtengo el objeto con el metodo find y muestro los atributos en el html*/
 const mostrarProductoDetalles = (atributo) => {
     const detallesDeProducto = arrayProductos.find(element => {
         return element.imagenOn === atributo
@@ -22,4 +24,5 @@ stockDeProducto.innerHTML = detallesDeProducto.stock;
 descripcionDeProducto.innerHTML = detallesDeProducto.descripcion
 }
 
-mostrarProductoDetalles("false")
+/* La funcion se ejecutara cada vez que se carga la el html */
+mostrarProductoDetalles("true")
