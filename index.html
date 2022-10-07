@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./img/icono-tienda.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="shortcut icon" href="./img/logo5.jpg" type="image/x-icon">
     <title>Rolling Store - Inicio</title>
 </head>
 
@@ -17,40 +17,42 @@
         <!-- Inicio del nav-bar -->
 
         <!-- Primer NAV -->
-        <nav class="navbar navbar-expand-lg ">
-            <div class="container-fluid ">
-                <a class="navbar-brand" href="#">Rolling Store</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        <nav class="navbar nav-bar-1  bg-dark navbar-expand-lg ">
+            <div class="container-fluid pe-lg-5">
+                <div class="d-flex flex-column align-items-center">
+                    <a class="navbar-brand fw-bold m-0" href="./index.html">Rolling Store</a>
+                </div>
+                <button class="navbar-toggler  navbar-light border border-dark " type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon text-black"></span>
                 </button>
                 <div class="nav-1-opciones collapse navbar-collapse d-lg-flex justify-content-lg-end "
                     id="navbarSupportedContent">
                     <ul class="navbar-nav  mb-2 mb-lg-0 ">
                         <li class="nav-item d-lg-none">
-                            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                            <a class="nav-link active  fw-bold" aria-current="page" href="./index.html">Inicio</a>
                         </li>
                         <li class="nav-item dropdown d-lg-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-black fw-bold" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Categorias
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Computacíon</a></li>
+                                <li><a class="dropdown-item " href="#">Computacíon</a></li>
                                 <li><a class="dropdown-item" href="#">Electrodomésticos</a></li>
                                 <li><a class="dropdown-item" href="#">Aire Libre</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Nosotros</a>
+                            <a class="nav-link  fw-bold" href="#">Nosotros</a>
                         </li>
                         <div class="d-lg-flex flex-lg-row ms-lg-5">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Registrar</a>
+                                <a class="nav-link  fw-bold" href="#">Registrar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Login</a>
+                                <a class="nav-link  fw-bold" href="#">Login</a>
                             </li>
                         </div>
 
@@ -63,8 +65,9 @@
         <!-- Segundo nav -->
         <nav class="navbar navbar-light bg-primary">
             <div class="container-fluid justify-content-center justify-content-lg-evenly">
-                <div class=" d-none d-lg-inline d-flex justify-content-center align-items-center me-lg-5 ">
-                    <a class="navbar-brand p-0 " href="./index.html">
+                <div
+                    class=" d-none opciones-categorias d-lg-inline d-flex justify-content-center align-items-center me-lg-5 ">
+                    <a class="navbar-brand  p-0 " href="./index.html">
                         <img class="mb-2" src="./img/index/navbar/home.svg" alt="icono-inicio" width="30" height="24">
                     </a>
                     <a class="navbar-brand" href="#">Computación</a>
@@ -90,8 +93,6 @@
 
         <!-- Fin del nav-bar -->
     </header>
-
-    <!--- Inicio del carrousel -->
     <aside class="carousel">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators m-0">
@@ -125,83 +126,31 @@
             </button>
         </div>
     </aside>
-    <!--- Fin del carrousel -->
 
-
-
-
-
-
-
-
-
-
-    <main class="container-fluid flex-grow-1  bg-info">
-        <div class="row  justify-content-center p-1">
-            <div class="col-4 col-md-3 p-0 mt-2">
-                <select class="form-select p-2 " aria-label="Default select example">
-                    <option selected>Marcas</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
-            <div class="d-flex flex-column justify-content-center align-items-center mt-3">
-                <h6>Precio</h6>
-                <form class="d-flex justify-content-evenly mt-2">
-                    <div class="col-3">
-                        <input type="number" class="form-control" placeholder="Min" aria-label="First name">
-                    </div>
-                    <div class="col-3">
-                        <input type="number" class="form-control" placeholder="Max" aria-label="Last name">
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="bg-danger p-2">
-            <section class="container">
-                <h3 class="text-decoration-underline">Computación:</h3>
-                <div class="row mt-3 d-flex flex-column align-items-center justify-content-between">
-                    <div class="card mt-2 shadow p-3 mb-5 bg-body rounded" style="width: 14rem; height: 19rem;">
-                        <img src="..." class="card-img-top h-50 bg-black img-fluid" alt="...">
-                        <div class="card-body bg-danger">
-                            <h5 class="card-title">Nombre Producto</h5>
-                            <p class="card-text">Descripcion</p>
-                            <div class="precio-carrito d-flex justify-content-between align-items-center">
-                                <h4 class="m-0">$234</h4>
-                                <a href="#" class=" link-carrito btn  p-0 "><img class="carrito" src="./img/index/pagina-principal/cart3.svg" alt=""></a>
-                            </div>
-                          
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-
-
+  
 
     <footer>
-        <div class="bg-secondary">
+        <div class="">
             <div class="informacion-footer container-fluid  d-lg-flex p-0 ">
                 <div
-                    class="marca-footer  w-100 p-4  d-lg-flex justify-content-lg-center align-items-lg-center border-bottom border-dark p-lg-0">
-                    <h4 class="text-center">Rolling Store</h4>
+                    class="marca-footer  w-100 p-4 d-flex flex-column justify-content-center align-items-center d-lg-flex flex-column  justify-content-lg-center align-items-lg-center border-bottom border-dark p-lg-0">
+                    <h4 class="text-center fw-bold mt-2">Rolling Store</h4>
                 </div>
                 <div
                     class="contacto-footer  d-flex flex-column justify-content-center align-items-center  w-100 p-3 border-bottom border-dark ">
-                    <h4 class="text-center">Contacto</h4>
+                    <h4 class="text-center fw-bold ">Contacto</h4>
                     <div class="contacto-footer-informacion mt-2">
-                        <p><img src="./img/index/footer/contacto/map.svg" alt=""> San Miguel de tucuman</p>
-                        <p> <img src="./img/index/footer/contacto/whatsapp.svg" alt=""> 381346789</p>
-                        <p> <img src="./img/index/footer/contacto/e-mail.svg" alt=""> Rolling_Store@gmail.com</p>
-
+                        <p class="fw-bold ps-1"><img class="mb-1 fw-bold ps-1" src="./img/index/footer/contacto/map.svg"
+                                alt="icono-map"> San Miguel de tucuman</p>
+                        <p class="fw-bold ps-1"> <img class="mb-1" src="./img/index/footer/contacto/whatsapp.svg"
+                                alt="icono-wsp"> 381346789</p>
+                        <p class="fw-bold ps-1"> <img class="mb-1" src="./img/index/footer/contacto/e-mail.svg"
+                                alt="icono-mail"> Rolling_Store@gmail.com</p>
                     </div>
                 </div>
                 <div
                     class="redes-footer d-flex flex-column justify-content-center align-items-center d-md-flex flex-md-column justify-content-md-center align-items-md-center d-lg-flex justify-content-lg-center  w-100 py-3 px-lg-4 ">
-                    <h4 class="text-center ">Seguinos en nuestras redes:</h4>
+                    <h4 class="text-center ">Seguinos en nuestras redes</h4>
                     <div
                         class="icono-redes  w-75  d-flex justify-content-around d-md-flex justify-content-md-evenly m-0 mt-3 mt-lg-3 px-md-4">
                         <a href="https://www.facebook.com/" target="_blank"><img
@@ -215,8 +164,8 @@
                 </div>
 
             </div>
-            <div class="derechos-footer bg-dark text-white-50 p-1 d-flex justify-content-center align-items-center ">
-                <p class="m-0"> Proyecto 2 - Rolling Store &copy 2022</p>
+            <div class="derechos-footer  text-white-50 p-2 d-flex justify-content-center align-items-center ">
+                <p class="m-0 text-white fw-bold"> Proyecto 2 - Rolling Store &copy 2022</p>
             </div>
         </div>
     </footer>
