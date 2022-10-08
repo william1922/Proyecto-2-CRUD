@@ -71,12 +71,23 @@ function validarCampos(input) {
       return false;
     }
   }
-
-  function validacionTotal(registrarUsuario, registrarContraseña, registrarEmail) {
+  function confirmarSegundaContraseña(input){
+    if(input.value === registrarContraseña.value){
+        input.className = "form-control is-valid";
+        return true
+    } else {
+        input.className = "form-control is-invalid";
+        return false
+    }
+  }
+ 
+  
+  
+  function validacionTotal(registrarUsuario, registrarContraseña, confirmarContraseña,registrarEmail) {
     if (
       validarCampos(registrarUsuario) &&
       validarContraseña(registrarContraseña) &&
-      //confirmarContraseña(confirmarContraseña) &&
+      confirmarSegundaContraseña(confirmarContraseña) &&
       validarEmail(registrarEmail) 
       
     ) {
@@ -90,7 +101,7 @@ function validarCampos(input) {
 
 function guardarUsuario(e) {
     e.preventDefault();
-    if (validacionTotal(registrarUsuario, registrarContraseña, registrarEmail)) {
+    if (validacionTotal(registrarUsuario, registrarContraseña, confirmarContraseña,registrarEmail)) {
       crearUsuario();
       window.setTimeout(function () {
         window.location.replace("login.html");
