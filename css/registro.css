@@ -6,6 +6,6 @@
         background: linear-gradient(to right,#ffa751,#ffe259);
     }
     .imagen{
-        background-image: url(img/img_registro.jpg);
+        background-image: url(/img/img_registro.jpg);
         background-position: center center;
     }

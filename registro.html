@@ -7,30 +7,10 @@
     <link rel="stylesheet" href="/css/registro.css">
     <title>Registro</title>
 
-        <style>
-             
-        .imagen{
-            background-image: url(img/img_registro.jpg);
-            background-position: center center;
-        }
-        </style> 
-    <!-- <style>
-        body {
-            background:#ffe259 ;
-            background: linear-gradient(to right,#ffa751,#ffe259);
-        }
-        .imagen{
-            background-image: url(img/img_registro.jpg);
-            background-position: center center;
-        }
-    
-
-    </style> -->
-
-
+      
 </head>
 <body>
-    <div class="container w-75 bg-primary mt-5 rounded shadow">
+    <div class="container w-10 bg-primary mt-5 rounded shadow">
         <div class="row align-items-sm-stretch">
             <div class="col imagen d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
                 
@@ -42,29 +22,32 @@
                 <h2 class="fw-bold text-center py-5">Regístrate</h2>
 
             <!-- Registro--> 
-            <form action="#">
+            <form action="#" id="form_registro">
                 <div class="my-1">
-                <label for="Ususario" class="form-check-label">Nombre de Usuario</label>
-                  <input type="usuario" class="form-control" name="usuario" placeholder="User725">
+                <label  class="form-label">Nombre de Usuario</label>
+                  <input type="text" class="form-control" name="usuario" placeholder="User725" id="registrar_usuario">
 
                 </div>
+                <!-- <div class="my-1">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" name="contraseña" placeholder="Entre 8-12 caracteres" id="registrar_contraseña">
+                </div> -->
                 <div class="my-1">
-                    <label for="contraseña" class="form-check-label">Contraseña</label>
-                    <input type="contraseña" class="form-control" name="contraseña" placeholder="Entre 8-12 caracteres">
-                </div>
-
+                    <label class="form-label">Password "Digitos, minusculas y mayusculas, entre 8-16 caracteres"</label>
+                    <input type="password" class="form-control" name="contraseña" placeholder="Password" id="registrar_contraseña">
+                  </div>
                 <div class="my-1">
-                    <label for="contraseña" class="form-check-label">Confirmar Contraseña</label>
-                    <input type="contraseña" class="form-control" name="conf_contraseña" placeholder="Entre 8-12 caracteres">
+                    <label class="form-label">Confirmar Contraseña</label>
+                    <input type="password" class="form-control" name="conf_contraseña" placeholder="Entre 8-12 caracteres" id="confirmar_contraseña">
                 </div>
                 
                 <div class="my-3">
-                    <label for="email" class="form-check-label">E-mail</label>
-                    <input type="email" class="form-control" name="email" placeholder="ejemplo@gmail.com">
+                    <label class="form-label">E-mail</label>
+                    <input type="email" class="form-control" name="email" placeholder="ejemplo@gmail.com" id="registrar_email">
                 </div>
 
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-primary">Regístrate</button>
+                    <button type="submit" class="btn btn-primary" id="btnRegistrate">Regístrate</button>
                 </div>
                 <div class="my-3">
                     <span>Ya eres miembro? <a href="login.html">Inicia tu Sesión</a></span> <br>
@@ -129,7 +112,23 @@
         </div>
 
     </div>
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+    
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    
+    <script src="/js/registro.js"></script>
 </body>
 </html>

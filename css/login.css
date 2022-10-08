@@ -4,7 +4,7 @@ body {
     background:#ffe259 ;
     background: linear-gradient(to right,#ffa751,#ffe259);
 }
-/* .imagen{
-    background-image: url(img/img_login.jpg);
+.imagen{
+    background-image: url(/img/img_login.jpg);
     background-position: center center;
-} */
+}
