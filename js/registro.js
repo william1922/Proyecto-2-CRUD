@@ -1,10 +1,11 @@
 //clase
 class User {
-    constructor(usuario,contraseña,confcontraseña,email){
+    constructor(usuario,contraseña,confcontraseña,email,userOn){
         this.usuario=usuario;
         this.contraseña=contraseña;
         this.confcontraseña=confcontraseña;
         this.email=email;
+        this.userOn="";
     }
 }
 
@@ -13,6 +14,7 @@ let registrarUsuario =document.getElementById ("registrar_usuario");
 let registrarContraseña = document.getElementById("registrar_contraseña");
 let confirmarContraseña = document.getElementById("confirmar_contraseña");
 let registrarEmail = document.getElementById("registrar_email");
+let registrarUserOn = "";
 let formRegistro = document.getElementById('form_registro');
 let regUser =JSON.parse(localStorage.getItem("regUser")) || [];
 
@@ -34,6 +36,11 @@ confirmarContraseña.addEventListener("bluer",() => {
 registrarEmail.addEventListener("bluer",() => {
    validarCampos(registrarEmail)
 });
+
+// registrarUserOn.addEventListener("bluer",() => {
+//     validarCampos(registrarUserOn)
+//  });
+ 
 
 formRegistro.addEventListener("submit", guardarUsuario);
 
@@ -101,7 +108,7 @@ function validarCampos(input) {
 
 function guardarUsuario(e) {
     e.preventDefault();
-    if (validacionTotal(registrarUsuario, registrarContraseña, confirmarContraseña,registrarEmail)) {
+    if (validacionTotal(registrarUsuario, registrarContraseña, confirmarContraseña,registrarEmail,registrarUserOn)) {
       crearUsuario();
       window.setTimeout(function () {
         window.location.replace("login.html");
@@ -116,12 +123,15 @@ function guardarUsuario(e) {
       registrarUsuario.value,
       registrarContraseña.value,
       confirmarContraseña.value,
-      registrarEmail.value
+      registrarEmail.value,
+     registrarUserOn.value
+     
     );
     regUser.push(newUser);
     limpiarFormRegistro();
+    alert("Su usuario fue correctamente cargado");
+
    
-   // Swal.fire("Usuario creado","Su usuario fue correctamente cargado","success","success" );
   }
   function limpiarFormRegistro() {
     formRegistro.reset();
