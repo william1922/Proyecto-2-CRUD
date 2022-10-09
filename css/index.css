@@ -3,11 +3,58 @@
 
 
 /* Pgina principal */
-img.carrito{
-    width: 2rem;
+
+div.card img.carrito{
+    width: 1.3rem;
 }
 
 a.link-carrito:hover{
     background-color: darkgray;
 }
+
+main{
+    background-color: #eeeef0;
+}
+
+
+
+/* ---------- Break Point ---------------- */
+
+@media  (min-width: 992px )  {
+    main div.columna-1 {
+        border:1px solid black;
+    }
+    div.columna-1{
+        height: 22rem;
+        width: 15rem;
+        margin-top: 7rem;
+    }
+
+    div.columna-1 select{
+        width: 8rem;
+    }
+
+    div.contenedor-marca{
+        width: 100%;
+    }
+    main div.card {
+        width: 250px;
+        
+    }
+
+    main div.card a.btn{
+        width: 100%;
+    }
+
+    div.columna-1 input[type="number"] {
+        width: 5rem;
+        
+    }
+
+
+     div.card img.imagen-producto{
+        height: 9rem;
+    } 
+}
+
 
