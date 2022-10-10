@@ -6,5 +6,6 @@ body {
 }
 .imagen{
     background-image: url(/img/img_login.jpg);
-    background-position: center center;
+    background-position: center center no-repeat;
+    background-size: cover;
 }

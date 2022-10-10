@@ -1,11 +1,13 @@
 //clase
 class User {
-    constructor(usuario,contraseña,confcontraseña,email,userOn){
+    constructor(usuario,contraseña,confcontraseña,email,userOn,carrito){
         this.usuario=usuario;
         this.contraseña=contraseña;
-        this.confcontraseña=confcontraseña;
+        //this.confcontraseña=confcontraseña;
         this.email=email;
         this.userOn="";
+        this.carrito=[]
+        
     }
 }
 
@@ -130,6 +132,11 @@ function guardarUsuario(e) {
     regUser.push(newUser);
     limpiarFormRegistro();
     alert("Su usuario fue correctamente cargado");
+    swal.fire(
+        "Usuario crado",
+        "Su usuario fue correctamente cargado"
+        "succes"
+    )
 
    
   }
