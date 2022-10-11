@@ -7,7 +7,7 @@ class User {
         this.email=email;
         this.userOn="";
         this.carrito=[]
-        
+
     }
 }
 
@@ -17,6 +17,7 @@ let registrarContraseña = document.getElementById("registrar_contraseña");
 let confirmarContraseña = document.getElementById("confirmar_contraseña");
 let registrarEmail = document.getElementById("registrar_email");
 let registrarUserOn = "";
+let carrito = [];
 let formRegistro = document.getElementById('form_registro');
 let regUser =JSON.parse(localStorage.getItem("regUser")) || [];
 
@@ -110,7 +111,7 @@ function validarCampos(input) {
 
 function guardarUsuario(e) {
     e.preventDefault();
-    if (validacionTotal(registrarUsuario, registrarContraseña, confirmarContraseña,registrarEmail,registrarUserOn)) {
+    if (validacionTotal(registrarUsuario, registrarContraseña, confirmarContraseña,registrarEmail,registrarUserOn,carrito)) {
       crearUsuario();
       window.setTimeout(function () {
         window.location.replace("login.html");
@@ -126,17 +127,18 @@ function guardarUsuario(e) {
       registrarContraseña.value,
       confirmarContraseña.value,
       registrarEmail.value,
-     registrarUserOn.value
+     registrarUserOn.value,
+     carrito.value
      
     );
     regUser.push(newUser);
     limpiarFormRegistro();
     alert("Su usuario fue correctamente cargado");
-    swal.fire(
-        "Usuario crado",
-        "Su usuario fue correctamente cargado"
-        "succes"
-    )
+    // swal.fire(
+    //     "Usuario crado",
+    //     "Su usuario fue correctamente cargado"
+    //     "succes"
+    // )
 
    
   }

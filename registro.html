@@ -7,28 +7,97 @@
     <link rel="stylesheet" href="/css/registro.css">
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/categorias.css">
     <title>Registro</title>
 
       
 </head>
 <body>
     <header class="sticky-top">
-  
+        <!-- Inicio del nav-bar -->
+
+        <!-- Primer NAV -->
+        <nav class="navbar nav-bar-1  bg-dark navbar-expand-lg ">
+            <div class="container-fluid pe-lg-5">
+                <div class="d-flex flex-column align-items-center">
+                    <a class="navbar-brand fw-bold m-0" href="./index.html">Rolling Store</a>
+                </div>
+                <button class="navbar-toggler  navbar-light border border-dark " type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon text-black"></span>
+                </button>
+                <div class="nav-1-opciones collapse navbar-collapse d-lg-flex justify-content-lg-end "
+                    id="navbarSupportedContent">
+                    <ul class="navbar-nav  mb-2 mb-lg-0 ">
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link active  fw-bold" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown d-lg-none">
+                            <a class="nav-link dropdown-toggle text-black fw-bold" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categorias
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item " href="#">Computacíon</a></li>
+                                <li><a class="dropdown-item active" href="#">Electrodomésticos</a></li>
+                                <li><a class="dropdown-item" href="#">Aire Libre</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  fw-bold" href="#">Nosotros</a>
+                        </li>
+                        <div class="d-lg-flex flex-lg-row ms-lg-5">
+                            <li class="nav-item">
+                                <a class="nav-link  fw-bold" href="#">Registrar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  fw-bold" href="#">Login</a>
+                            </li>
+                        </div>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!---------------->
+
+        <!-- Segundo nav -->
+        <nav class="navbar-2 navbar navbar-light bg-primary">
+            <div class="container-fluid justify-content-center justify-content-lg-evenly">
+                <div
+                    class=" d-none opciones-categorias d-lg-inline d-flex justify-content-center align-items-center me-lg-5 ">
+                    <a class="navbar-brand  p-0 " href="./index.html">
+                        <img class="mb-2" src="./img/index/navbar/home.svg" alt="icono-inicio" width="30" height="24">
+                    </a>
+                    <a class="navbar-brand" href="#">Computación</a>
+                    <a class="navbar-brand" href="#">Electrodomésticos</a>
+                    <a class="navbar-brand" href="#">Aire Libre</a>
+
+                </div>
+
+                <form class="d-flex align-items-center me-lg-5">
+                    <input class="busqueda-nav form-control me-2 " type="search" placeholder="&#128269 Búsqueda"
+                        aria-label=" Busqueda">
+                </form>
+            </div>
+        </nav>
+
         <!----------------->
 
         <!-- Fin del nav-bar -->
     </header>
 
 
-    <div class="container w-10 bg-primary mt-5 rounded shadow">
-        <div class="row align-items-sm-stretch">
-            <div class="col imagen d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
+    <div class="container w-10 bg-primary mt-5 rounded shadow my-5" >
+        <div class="row align-items-sm-stretch mt-3">
+            <div class="col imagen d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded ">
                 
             </div>
             <div class="col bg-white p-5 rounded-end">
-                <div class="text-end">
+                <!-- <div class="text-end">
                     <img src="img/logo5.jpg" width="100" alt="">
-                </div>
+                </div> -->
                 <h2 class="fw-bold text-center py-5">Regístrate</h2>
 
                 <!-- Registro--> 
@@ -117,10 +186,44 @@
     </div>
     
     <footer>
+        <div class="">
+            <div class="informacion-footer container-fluid  d-lg-flex p-0 ">
+                <div
+                    class="marca-footer  w-100 p-4 d-flex flex-column justify-content-center align-items-center d-lg-flex flex-column  justify-content-lg-center align-items-lg-center border-bottom border-dark p-lg-0">
+                    <h4 class="text-center fw-bold mt-2">Rolling Store</h4>
+                </div>
+                <div
+                    class="contacto-footer  d-flex flex-column justify-content-center align-items-center  w-100 p-3 border-bottom border-dark ">
+                    <h4 class="text-center fw-bold ">Contacto</h4>
+                    <div class="contacto-footer-informacion mt-2">
+                        <p class="fw-bold ps-1"><img class="mb-1 fw-bold ps-1" src="./img/index/footer/contacto/map.svg"
+                                alt="icono-map"> San Miguel de tucuman</p>
+                        <p class="fw-bold ps-1"> <img class="mb-1" src="./img/index/footer/contacto/whatsapp.svg"
+                                alt="icono-wsp"> 381346789</p>
+                        <p class="fw-bold ps-1"> <img class="mb-1" src="./img/index/footer/contacto/e-mail.svg"
+                                alt="icono-mail"> Rolling_Store@gmail.com</p>
+                    </div>
+                </div>
+                <div
+                    class="redes-footer d-flex flex-column justify-content-center align-items-center d-md-flex flex-md-column justify-content-md-center align-items-md-center d-lg-flex justify-content-lg-center  w-100 py-3 px-lg-4 ">
+                    <h4 class="text-center ">Seguinos en nuestras redes</h4>
+                    <div
+                        class="icono-redes  w-75  d-flex justify-content-around d-md-flex justify-content-md-evenly m-0 mt-3 mt-lg-3 px-md-4">
+                        <a href="https://www.facebook.com/" target="_blank"><img
+                                src="./img/index/footer/redes/facebook.png" alt="icono-facebook"></a>
+                        <a href="https://www.instagram.com/" target="_blank"><img
+                                src="./img/index/footer/redes/instagram.png" alt="icono-instagram"></a>
+                        <a href="https://twitter.com/account/access" target="_blank"><img
+                                src="./img/index/footer/redes/gorjeo.png" alt="icono-twitter"></a>
 
+                    </div>
+                </div>
 
-
-        
+            </div>
+            <div class="derechos-footer  text-white-50 p-2 d-flex justify-content-center align-items-center ">
+                <p class="m-0 text-white fw-bold"> Proyecto 2 - Rolling Store &copy 2022</p>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
