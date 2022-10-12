@@ -1,12 +1,14 @@
 //clase
+
 class User {
-    constructor(usuario,contraseña,confcontraseña,email,userOn,carrito){
+        constructor(usuario,contraseña,confcontraseña,email,userOn,carrito,id){
         this.usuario=usuario;
         this.contraseña=contraseña;
         //this.confcontraseña=confcontraseña;
         this.email=email;
         this.userOn="";
         this.carrito=[]
+        this.id=Date.now()
 
     }
 }
@@ -122,14 +124,14 @@ function guardarUsuario(e) {
   }
 
   function crearUsuario() {
-    let newUser = new User(
+      let newUser = new User(
       registrarUsuario.value,
       registrarContraseña.value,
       confirmarContraseña.value,
       registrarEmail.value,
-     registrarUserOn.value,
-     carrito.value
-     
+      registrarUserOn.value,
+      carrito.value
+      
     );
     regUser.push(newUser);
     limpiarFormRegistro();
