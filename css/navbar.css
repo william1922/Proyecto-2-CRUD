@@ -49,9 +49,24 @@ ul.dropdown-menu li a:hover{
 }
 
 
+/*----- Administracion --------- */
+ul.opc-adm{
+    background-color: rgba(41, 52, 98, 0.87);;
+}
+
+ul.opc-adm li button:hover{
+    background-color: rgba(115, 116, 117, 0.87);;
+}
+
+.adm-exit img:hover  {
+background-color: rgba(214, 28, 78, 0.349);
+border-bottom: 1px solid rgba(214, 28, 78, 0.349) ;
+}
 
 
 
+
+/* ------ Usuario ---------- */
 
 
 
