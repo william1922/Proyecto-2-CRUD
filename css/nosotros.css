@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: salmon;
+}
+
+.img-card{
+    width: 200px;
+    height: 200px;
+}
+
+.social-logo{
+    width: 30px;
+    height: 30px;
+}
+
+.card{
+    transition: 0.5s;
+}
+
+.card:hover{
+    background-color: gray;
+    color: white;
+    transform: scale(1.2);
+    z-index: 10;
+}
