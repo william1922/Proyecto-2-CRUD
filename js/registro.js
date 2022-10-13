@@ -1,15 +1,13 @@
 //clase
 
 class User {
-        constructor(usuario,contraseña,confcontraseña,email,userOn,carrito,id){
+        constructor(usuario,contraseña,email,userOn,carrito,fecha){
         this.usuario=usuario;
         this.contraseña=contraseña;
-        //this.confcontraseña=confcontraseña;
         this.email=email;
         this.userOn="";
-        this.carrito=[]
-        this.id=Date.now()
-
+        this.carrito=[];
+        this.fecha=fecha;
     }
 }
 
@@ -42,10 +40,8 @@ registrarEmail.addEventListener("bluer",() => {
    validarCampos(registrarEmail)
 });
 
-// registrarUserOn.addEventListener("bluer",() => {
-//     validarCampos(registrarUserOn)
-//  });
- 
+
+
 
 formRegistro.addEventListener("submit", guardarUsuario);
 
@@ -60,7 +56,7 @@ function validarCampos(input) {
       return false;
     }
   }
-  
+
   function validarEmail(input) {
     let regEmail =
       /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
@@ -109,11 +105,17 @@ function validarCampos(input) {
     }
   }
 
+  function fecha() {
+    let fecha = [];
+        for (var i = 4; i < 24; i++) {
+        fecha += (Date()[i])
+        } 
+  }
 //funciones
 
 function guardarUsuario(e) {
     e.preventDefault();
-    if (validacionTotal(registrarUsuario, registrarContraseña, confirmarContraseña,registrarEmail,registrarUserOn,carrito)) {
+    if (validacionTotal(registrarUsuario, registrarContraseña, confirmarContraseña,registrarEmail,registrarUserOn,carrito,fecha)) {
       crearUsuario();
       window.setTimeout(function () {
         window.location.replace("login.html");
@@ -130,7 +132,9 @@ function guardarUsuario(e) {
       confirmarContraseña.value,
       registrarEmail.value,
       registrarUserOn.value,
-      carrito.value
+      carrito.value,
+      fecha.value
+      
       
     );
     regUser.push(newUser);
@@ -156,5 +160,6 @@ function guardarUsuario(e) {
   function guardarUsuarioLS() {
     localStorage.setItem("regUser", JSON.stringify(regUser));
   }
+
 
 
