@@ -1,13 +1,14 @@
 //clase
 
 class User {
-        constructor(usuario,contraseña,email,userOn,carrito,fecha){
+        constructor(usuario,contraseña,email,fecha){
         this.usuario=usuario;
         this.contraseña=contraseña;
         this.email=email;
         this.userOn="";
         this.carrito=[];
         this.fecha=fecha;
+        this.admin = ""
     }
 }
 
@@ -16,11 +17,9 @@ let registrarUsuario =document.getElementById ("registrar_usuario");
 let registrarContraseña = document.getElementById("registrar_contraseña");
 let confirmarContraseña = document.getElementById("confirmar_contraseña");
 let registrarEmail = document.getElementById("registrar_email");
-let registrarUserOn = "";
-let carrito = [];
 let formRegistro = document.getElementById('form_registro');
 let regUser =JSON.parse(localStorage.getItem("regUser")) || [];
-
+localStorage.setItem("regUser",JSON.stringify(regUser))
 
 //agregar registro
 
@@ -88,15 +87,21 @@ function validarCampos(input) {
         return false
     }
   }
- 
   
-  
+  // Se confirm si un usuario existe en el array
+  const confrimarUsuario = (usuario) => {
+    const existeUsuario = regUser.some(element => {
+      return element.usuario === usuario.value
+    })
+    return existeUsuario
+  }
+
   function validacionTotal(registrarUsuario, registrarContraseña, confirmarContraseña,registrarEmail) {
     if (
-      validarCampos(registrarUsuario) &&
       validarContraseña(registrarContraseña) &&
       confirmarSegundaContraseña(confirmarContraseña) &&
-      validarEmail(registrarEmail) 
+      validarEmail(registrarEmail) &&
+      !confrimarUsuario(registrarUsuario)
       
     ) {
       return true;
@@ -110,12 +115,13 @@ function validarCampos(input) {
         for (var i = 4; i < 24; i++) {
         fecha += (Date()[i])
         } 
+        return fecha
   }
 //funciones
 
 function guardarUsuario(e) {
     e.preventDefault();
-    if (validacionTotal(registrarUsuario, registrarContraseña, confirmarContraseña,registrarEmail,registrarUserOn,carrito,fecha)) {
+    if (validacionTotal(registrarUsuario, registrarContraseña, confirmarContraseña,registrarEmail)) {
       crearUsuario();
       window.setTimeout(function () {
         window.location.replace("login.html");
@@ -129,13 +135,8 @@ function guardarUsuario(e) {
       let newUser = new User(
       registrarUsuario.value,
       registrarContraseña.value,
-      confirmarContraseña.value,
       registrarEmail.value,
-      registrarUserOn.value,
-      carrito.value,
-      fecha.value
-      
-      
+      fecha()
     );
     regUser.push(newUser);
     limpiarFormRegistro();
