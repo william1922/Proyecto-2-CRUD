@@ -15,28 +15,28 @@
 
 <body>
     <!--Seccion de los detalles de producto-->
-    <section class="d-flex justify-content-center flex-column align-items-center my-5">
+    <section class="d-flex flex-column align-items-center my-3">
         <!--Seccion de la imagen y detalle de producto-->
-        <div class="d-flex contenedor-imagen-detalles flex-column d-md-flex flex-md-row justify-content-center justify-content-md-center">
+        <div class="d-flex w-100 contenedor-imagen-detalles flex-column d-md-flex flex-md-row justify-content-center justify-content-md-between">
             <!--Imagen en responsive-->
-            <div class="align-self-center imagen-responsive d-sm-block d-md-none">
-                <img id="imagen-de-producto-responsive" src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="container-fluid px-5 rounded-bottom"
+            <div class="align-self-center w-100 py-2 imagen-responsive d-sm-block d-md-none">
+                <img id="imagen-de-producto-responsive" src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="px-5 img-thumbnail container-fluid rounded-bottom"
                     alt="imagen del producto">
             </div>
             <!--Fin de imagen en responsive-->
             <!--Inicio de imagen en md-->
-            <div class="d-md-flex imagen-en-md flex-md-column d-none justify-content-md-center align-items-md-center d-sm-none d-md-block rounded-start shadow-sm">
-                <img id="imagen-de-producto" src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="container-fluid h-75 w-100" alt="imagen del producto">
+            <div class="d-md-flex imagen-en-md w-100 px-4 flex-md-column d-none justify-content-md-center align-items-md-center d-sm-none d-md-block rounded-start shadow-sm">
+                <img id="imagen-de-producto" src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="container h-75 img-thumbnail" alt="imagen del producto">
             </div>
             <!--Fin de imagen en md-->
             <!--Inicio de los detalles de Producto -->
-            <div class="py-5 shadow-sm rounded-end contenedor-detalles container-fluid d-flex flex-column">
-                <ul type="none">
-                    <li id="marca-de-producto" class="producto-marca text-center">LG</li>
-                    <li id="nombre-de-producto" class="producto-nombre">Nombre del Producto</li>
-                    <li id="precio-de-producto" class="producto-precio text-danger"><strong class="h1 text-success fw-bolder">$</strong> 9999</li>
-                    <li id="categoria-de-producto" class="producto-categoria">Categoria</li>
-                    <li class="producto-stock d-flex flex-row">Stock: <p  id="stock-de-producto" class="px-3">9</p>
+            <div class="py-md-5 w-100 shadow-sm px-md-4 rounded-end justify-content-center contenedor-detalles container-fluid d-flex flex-column">
+                <ul type="none" class="list-group">
+                    <li id="marca-de-producto" class="producto-marca mb-3 text-center">LG</li>
+                    <li id="nombre-de-producto" class="h5">Nombre del Producto</li>
+                    <li id="precio-de-producto" class="h3 text-danger"><strong class="h1 text-success fw-bolder">$</strong> 9999</li>
+                    <li id="categoria-de-producto" class="h5">Categoria</li>
+                    <li class="producto-stock d-flex h6 flex-row">Stock: <p  id="stock-de-producto" class="px-3">9</p>
                     </li>
                 </ul>
                 <div class="d-flex flex-row pb-2 d-sm-flex flex-md-row justify-content-around">
@@ -64,7 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
-        <script src="/js/detalleProducto.js"></script>
+        <script src="/js/detalleProducto.js" type="module"></script>
 </body>
 
 </html>
