@@ -30,15 +30,22 @@ let producto3 = new Producto(3333,'Parrilla','Coleman',100,60000,'aireLibre','ht
 
 //paso 5 - llenamos el array con los 3 productos (EJECUTARLO UNA VEZ Y LUEGO COMENTARLO PORQUE SINO SE DUPLICA EN EL LOCALSTORAGE)
 // productos.push(producto1,producto2,producto3)
-
+const inputcodigo = document.querySelector('#inputCodigo')
+inputcodigo.value = new Date().getTime()
 //paso 6 - guardar el array en el localStorage (EJECUTARLO UNA VEZ Y LUEGO COMENTARLO PORQUE SINO SE DUPLICA EN EL LOCALSTORAGE)
-
+const comprobarProducto = (codigo) => {
+    let exist = productos.some(element => {
+        return element.codigo === codigo.toString()
+    })
+    return exist
+}
 
 //paso 8 - creamos una funcion para agregar los productos que se activa cuando se da CLIC en el boton SUBMIT
 const agregarProducto = (e) => {
     e.preventDefault()
+    
     // let inputCodigo = productos[productos.length - 1].codigo + 1 // para evitar problemas no usamos esto, sino lo siguiente, pero esto toma la ULTIMA posicion del array y le suma 1
-    let codigo = new Date().getTime() // esta es otra alternativa de obtener el codigo
+    //let codigo = new Date().getTime() // esta es otra alternativa de obtener el codigo
     let nombre = document.getElementById('inputNombre').value
     let marca = document.getElementById('inputMarca').value
     let cantidad = document.getElementById('inputCantidad').value
@@ -47,7 +54,7 @@ const agregarProducto = (e) => {
     let url = document.getElementById('inputUrl').value
     let descripcion = document.getElementById('inputDescripcion').value
     // colocamos el nuevo objeto en el array
-    productos.push(new Producto(codigo,nombre,marca,cantidad,precio,categoria,url,descripcion))
+    productos.push(new Producto(nombre,marca,cantidad,precio,categoria,url,descripcion))
     // agregamos el array al localStorage para tenerlo actualizado
     localStorage.setItem('productos',JSON.stringify(productos))
     //reseteamos el formulario

@@ -83,7 +83,7 @@ function cargarProducto() {
                     </div>
                     <div class="col-md-8 col-7">
                         <div class="card-body d-flex flex-column align-items-center px-sm-0 py-sm-2  ">
-                            <a href="http://" onclick="enviarProductoDetalles('${p.codigo}')" class="text-decoration-none">
+                            <a onclick="enviarProductoDetalles('${p.codigo}')" class="text-decoration-none">
                                 <h6 class="">${p.nombre}</h6>
                             </a>
                             <p class="m-0"><small>Marca: ${p.marca}</small></p>
@@ -116,7 +116,7 @@ function cargarProducto() {
                 </div>
                 <div class="col-md-8 col-7">
                     <div class="card-body d-flex flex-column align-items-center px-sm-0 py-sm-2  ">
-                        <a href="http://" onclick="enviarProductoDetalles('${producto.codigo}')" class="text-decoration-none">
+                        <a onclick="enviarProductoDetalles('${producto.codigo}')" class="text-decoration-none">
                             <h6 class="card-title">${producto.nombre}</h6>
                         </a>
                         <p class="m-0"><small>Marca: ${producto.marca}</small></p>
@@ -145,7 +145,7 @@ function cargarProducto() {
                 </div>
                 <div class="col-md-8 col-7">
                     <div class="card-body d-flex flex-column align-items-center px-sm-0 py-sm-2  ">
-                        <a href="http://" onclick="enviarProductoDetalles('${producto.codigo}')" class="text-decoration-none">
+                        <a onclick="enviarProductoDetalles('${producto.codigo}')" class="text-decoration-none">
                             <h6 class="card-title">${producto.nombre}</h6>
                         </a>
                         <p class="m-0"><small>Marca: ${producto.marca}</small></p>
@@ -181,7 +181,7 @@ function cargarProducto() {
                     </div>
                     <div class="col-md-8 col-7">
                         <div class="card-body d-flex flex-column align-items-center px-sm-0 py-sm-2  ">
-                            <a href="http://" onclick="enviarProductoDetalles('${producto.codigo}')" class="text-decoration-none">
+                            <a onclick="enviarProductoDetalles('${producto.codigo}')" class="text-decoration-none">
                                 <h6 class="card-title">${producto.nombre}</h6>
                             </a>
                             <p class="m-0"><small>Marca: ${producto.marca}</small></p>
@@ -210,7 +210,7 @@ function cargarProducto() {
                     </div>
                     <div class="col-md-8 col-7">
                         <div class="card-body d-flex flex-column align-items-center px-sm-0 py-sm-2  ">
-                            <a href="http://" onclick="enviarProductoDetalles('${producto.codigo}')" class="text-decoration-none">
+                            <a onclick="enviarProductoDetalles('${producto.codigo}')" class="text-decoration-none">
                                 <h6 class="card-title">${producto.nombre}</h6>
                             </a>
                             <p class="m-0"><small>Marca: ${producto.marca}</small></p>
