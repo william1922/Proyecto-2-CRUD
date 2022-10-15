@@ -14,15 +14,17 @@ const mostrarProductoDetalles = (atributo) => {
     const detallesDeProducto = arrayProductos.find(element => {
         return element.imagenOn === atributo
     })
-imagenProducto.src = detallesDeProducto.imagen;
-imagenProductoResponsive.src = detallesDeProducto.imagen;
-marcaDeProducto.innerHTML = detallesDeProducto.marca;
-nombreDeProducto.innerHTML = detallesDeProducto.nombre;
-precioDeProducto.innerHTML = `<strong class="h1 text-success fw-bolder">$</strong>${detallesDeProducto.precio}`
-categoriaDeProducto.innerHTML = detallesDeProducto.categoria;
-stockDeProducto.innerHTML = detallesDeProducto.stock;
-descripcionDeProducto.innerHTML = detallesDeProducto.descripcion
+    imagenProducto.src = detallesDeProducto.imagen;
+    imagenProductoResponsive.src = detallesDeProducto.imagen;
+    marcaDeProducto.innerHTML = detallesDeProducto.marca;
+    nombreDeProducto.innerHTML = detallesDeProducto.nombre;
+    precioDeProducto.innerHTML = `<strong class="h1 text-success fw-bolder">$</strong>${detallesDeProducto.precio}`
+    categoriaDeProducto.innerHTML = detallesDeProducto.categoria;
+    stockDeProducto.innerHTML = detallesDeProducto.stock;
+    descripcionDeProducto.innerHTML = detallesDeProducto.descripcion
 }
 
 /* La funcion se ejecutara cada vez que se carga la el html */
 mostrarProductoDetalles("true")
+
+

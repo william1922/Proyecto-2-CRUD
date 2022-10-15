@@ -1,13 +1,25 @@
 /*** Media Query de la imagen y descripcion del producto **/
 @media screen and (min-width: 768px){
     .contenedor-imagen-detalles{
-        width: 75%;
+        width: 70%;
     }
     .text-descripcion{
-        width: 85%;
+        width: 80%;
     }
     .contenido-descripcion{
-        width: 75%;
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .contenedor-imagen-detalles{
+        width: 50%;
+    }
+    .text-descripcion{
+        width: 70;
+    }
+    .contenido-descripcion{
+        width: 50%;
     }
 }
 
