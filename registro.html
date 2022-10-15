@@ -13,32 +13,59 @@
 </head>
 <body>
     <header class="sticky-top">
-  
-        <!----------------->
-
+        <!-- Inicio del nav-bar -->
+        <!-- Primer NAV -->
+        <nav class="navbar nav-bar-1  bg-dark navbar-expand-lg ">
+            <div class="container-fluid pe-lg-5">
+                <div class="d-flex flex-column align-items-center">
+                    <a class="navbar-brand fw-bold m-0" href="./index.html">Rolling Store</a>
+                </div>
+                <button class="navbar-toggler  navbar-light border border-dark " type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon text-black"></span>
+                </button>
+                <div class="nav-1-opciones collapse navbar-collapse d-lg-flex justify-content-lg-end "
+                    id="navbarSupportedContent">
+                    <ul class="navbar-nav  mb-2 mb-lg-0 ">
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link active  fw-bold" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown d-lg-none">
+                            <a class="nav-link dropdown-toggle text-black fw-bold" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categorias
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item " href="/computacion.html">Computacíon</a></li>
+                                <li><a class="dropdown-item" href="/electrodomesticos.html">Electrodomésticos</a></li>
+                                <li><a class="dropdown-item" href="/aireLibre.html">Aire Libre</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  fw-bold" href="/nosotros.html">Nosotros</a>
+                        </li>
+                        <div id="contenedorDeLogin" class="d-lg-flex flex-lg-row ms-lg-5 border border-dark rounded bg-dark bg-opacity-10">
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!---------------->
         <!-- Fin del nav-bar -->
     </header>
-
-
-    <div class="container w-10 bg-primary mt-5 rounded shadow">
+    <div class="container w-10 bg-primary my-4 rounded shadow">
         <div class="row align-items-sm-stretch">
             <div class="col imagen d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
-                
             </div>
             <div class="col bg-white p-5 rounded-end">
-                <div class="text-end">
-                    <img src="img/logo5.jpg" width="100" alt="">
-                </div>
                 <h2 class="fw-bold text-center py-5">Regístrate</h2>
-
                 <!-- Registro--> 
                 <form action="#" id="form_registro">
                 <div class="my-1">
                     <label  class="form-label">Nombre de Usuario</label>
                     <input type="text" class="form-control" name="usuario" placeholder="User725" id="registrar_usuario">
-
                 </div>
-          
                 <div class="my-1">
                     <label class="form-label">Registrar Contraseña</label>
                     <input type="password" class="form-control" name="contraseña" placeholder="Password: Digitos, minusculas y mayusculas, entre 8-16 caracteres" id="registrar_contraseña">
@@ -47,30 +74,23 @@
                     <label class="form-label">Confirmar Contraseña</label>
                     <input type="password" class="form-control" name="conf_contraseña" placeholder="Repetir contraseña" id="confirmar_contraseña">
                 </div>
-                
                 <div class="my-3">
                     <label class="form-label">E-mail</label>
                     <input type="email" class="form-control" name="email" placeholder="ejemplo@gmail.com" id="registrar_email">
                 </div>
-
-                
                 <div class="d-grid">
                     <button type="submit" class="btn btn-primary" id="btnRegistrate">Regístrate</button>
                 </div>
                 <div class="my-3">
                     <span>Ya eres miembro? <a href="login.html">Inicia tu Sesión</a></span> <br>
-                    
                 </div>
                 </form>
-            
             <!--Registrarse con redes Sociales-->
             <!-- <div class="container" w-100 my-5> -->
                 <div class="container bg-white my-5 w-75 rounded shadow"></div>
                 <div class="row text-center">
                     <div class="col-12"> <h4>Si prefieres puedes registrarte con:</h4>  </div>                     
-            
             <!-- Agrego el boton en una fila -->
-                    
                     <div class="row">
                         <div class="col text-center">
                             <button class="btn btn-outline-primary w-100 my-1 ">
@@ -81,14 +101,9 @@
                                         <div class="col-12 col-md-10 text-center">
                                             <a href="https://www.facebook.com/login/" class="text-decoration-none text-dark pointer">Facebook</a>
                                         </div>
-                                                                    
-                                   
                                 </div>
-
                             </button>
-                           
                         </div>
-
                         <div class="col">
                             <button class="btn btn-outline-danger w-100 my-1 ">
                                 <div class="row align-items-center">
@@ -98,47 +113,60 @@
                                     <div class="col-12 col-md-10 text-center">
                                         <a href="https://www.google.com/" class="text-decoration-none text-dark pointer">Google</a>
                                     </div>
-                                  
-                                   
                                 </div>
-
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-                        
-            
-
-
             </div>
         </div>
-
     </div>
-    
     <footer>
-
-
-
-        
+        <div class="">
+            <div class="informacion-footer container-fluid  d-lg-flex p-0 ">
+                <div class="marca-footer  w-100 p-4 d-flex flex-column justify-content-center align-items-center d-lg-flex flex-column  justify-content-lg-center align-items-lg-center border-bottom border-dark p-lg-0">
+                    <h4 class="text-center fw-bold mt-2">Rolling Store</h4>
+                </div>
+                <div class="contacto-footer  d-flex flex-column justify-content-center align-items-center  w-100 p-3 border-bottom border-dark ">
+                    <h4 class="text-center fw-bold ">Contacto</h4>
+                    <div class="contacto-footer-informacion mt-2">
+                        <p class="fw-bold ps-1"><img class="mb-1 fw-bold ps-1" src="./img/index/footer/contacto/map.svg"
+                                alt="icono-map"> San Miguel de tucuman</p>
+                        <p class="fw-bold ps-1"> <img class="mb-1" src="./img/index/footer/contacto/whatsapp.svg"
+                                alt="icono-wsp"> 381346789</p>
+                        <p class="fw-bold ps-1"> <img class="mb-1" src="./img/index/footer/contacto/e-mail.svg"
+                                alt="icono-mail"> Rolling_Store@gmail.com</p>
+                    </div>
+                </div>
+                <div class="redes-footer d-flex flex-column justify-content-center align-items-center d-md-flex flex-md-column justify-content-md-center align-items-md-center d-lg-flex justify-content-lg-center  w-100 py-3 px-lg-4 ">
+                    <h4 class="text-center ">Seguinos en nuestras redes</h4>
+                    <div class="icono-redes  w-75  d-flex justify-content-around d-md-flex justify-content-md-evenly m-0 mt-3 mt-lg-3 px-md-4">
+                        <a href="https://www.facebook.com/" target="_blank"><img
+                                src="./img/index/footer/redes/facebook.png" alt="icono-facebook"></a>
+                        <a href="https://www.instagram.com/" target="_blank"><img
+                                src="./img/index/footer/redes/instagram.png" alt="icono-instagram"></a>
+                        <a href="https://twitter.com/account/access" target="_blank"><img
+                                src="./img/index/footer/redes/gorjeo.png" alt="icono-twitter"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="derechos-footer  text-white-50 p-2 d-flex justify-content-center align-items-center ">
+                <p class="m-0 text-white fw-bold"> Proyecto 2 - Rolling Store &copy 2022</p>
+            </div>
+        </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
     crossorigin="anonymous"></script>
-    
-    
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
     crossorigin="anonymous"></script>
-    
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    
-    
     <script src="/js/registro.js"></script>
+    <script src="/js/imprimir-cerrarSesion.js"></script>
 </body>
 </html>

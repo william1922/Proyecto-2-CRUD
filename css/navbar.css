@@ -3,9 +3,14 @@
 
 
 
-header nav.navbar{
+header nav:first-child{
     /* background:#ffe259 ; */
-    background: linear-gradient(to bottom,#ffa751,#ffe259)
+    background: linear-gradient(to left,#ffa751,#ffe259)
+}
+
+header nav:last-child{
+    /* background:#ffe259 ; */
+    background: linear-gradient(to right,#ffa751,#ffe259)
 }
 
 header nav.navbar img.navbar-logo{

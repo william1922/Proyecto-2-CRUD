@@ -1,8 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap'); */
 
 body {
-    background:#ffe259 ;
-    background: linear-gradient(to right,#ffa751,#ffe259);
+    background-color: #eeeef0
 }
 .imagen{
     background-image: url(/img/img_login.jpg);

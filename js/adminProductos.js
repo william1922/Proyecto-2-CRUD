@@ -71,7 +71,7 @@ const llenarTabla = () => {
         <td>${producto.categoria}</td>
         <td>${producto.marca}</td>
         <td>${producto.cantidad}</td>
-        <td class="d-flex justify-content-around"><button class="btn btn-warning btn-sm" onclick="editarProducto(${producto.codigo})"><i class="fa-solid fa-pen-to-square"></i></button>
+        <td class="d-flex justify-content-around"><button href="#formulario" class="btn btn-warning btn-sm" onclick="editarProducto(${producto.codigo})"><i class="fa-solid fa-pen-to-square"></i></button>
         <button class="btn btn-danger btn-sm" onclick="eliminarProducto(${producto.codigo})"><i class="fa-solid fa-trash"></i></button>
         </td>`
 
@@ -119,7 +119,7 @@ const editarProducto = (codigo) => {
     const arrayFiltrado = productos.filter(producto => producto.codigo !== codigo)
     productos = arrayFiltrado;
     // agregamos el array al localStorage para tenerlo actualizado
-    localStorage.setItem("listaProductos", JSON.stringify(productos));
+    localStorage.setItem("productos", JSON.stringify(productos));
     // location.reload();
 }
 

@@ -2,7 +2,7 @@ let usuarioAdmin = { name: "admin", password: "admin" };
 let regUser = JSON.parse(localStorage.getItem("regUser"));
 let inputUser = document.getElementById("inputUser");
 let inputPass = document.getElementById("inputPass");
-let formLogin = document.getElementById("formLogin");
+let formLogin = document.getElementById("formlogin");
 let sesionInit = false;
 
 //asociando eventos
@@ -16,48 +16,49 @@ formLogin.addEventListener("submit", login);
 
 //funciones
 
-function login(e) {
-  e.preventDefault();
-  if (gralValidate(inputUser, inputPass)) {
-    if (inputUser.value === superUser.name) {
-      if (inputPass.value === superUser.password) {
-        sesionInit = true;
-        // sessionStorage.setItem("stateSesion", JSON.stringify(sesionInit));
-        localStorage.setItem("user", JSON.stringify(superUser));
-        // window.location.replace("index.html");
-        console.log("usuario admin");  
-        alert("Su usuario es administrador");      
-        
-      } else {
-        alert("Contraseña Incorrecta. Ingrese nuevamente");
-      }
-    } else if (inputUser.value === findUser(inputUser.value).usuario) {
-      if (inputPass.value === findUser(inputUser.value).contraseña) {
-        let newUser = findUser(inputUser.value);
-        sesionInit = true;
-        //sessionStorage.setItem("stateSesion", JSON.stringify(sesionInit));
-        localStorage.setItem("stateSesion",JSON.stringify(sesionInit))
-        localStorage.setItem("user", JSON.stringify(newUser));
-        window.location.replace("index.html");
-      } else {
-        alert("Contraseña Incorrecta. Ingrese nuevamente");
-      }
-    } else {
-      alert("Usuario Incorrecto. Ingrese nuevamente");
-    }
-  } else {
-    alert("Debe completar todos los campos");
-  }
+// Retorna true si un usuario existe en el array de usuarios y falso de no ser asi
+const confirmarUsuarioRegistrado = (usuario) => {
+  const confirmar = regUser.some(element => {
+    return element.usuario === usuario.value
+  })
+  return confirmar
 }
 
-function findUser(usuario) {
-  let newUser = regUser.find((user) => {
-    return user.usuario === usuario;
-  });
-  if (newUser !== undefined) {
-    return newUser;
+// Retorna el objeto mediante la comparacion de un atributo
+const obtenerUsuario = (usuario) => {
+  const contenedorUsuario = regUser.find(element => {
+    return element.usuario === usuario.value;
+  })
+  return contenedorUsuario
+}
+
+
+// Obtengo los datos de los inputs para logear
+function login(e) {
+  e.preventDefault();
+  // Se confirma si el usuario esta registrado
+  if (confirmarUsuarioRegistrado(inputUser)){
+    // Guardo el objeto en una variable
+    usuario = obtenerUsuario(inputUser)
+    // Comparo que que la contraseña ingresada sea igual al atributo contraseña del objeto
+     if (usuario.contraseña === inputPass.value){
+      // Cambio el atributo a "true" para posteriores usos en otras funsiones
+      usuario.userOn = "true"
+      // Remplazo el objeto obtenido con cambios en su atributo userOn con el antiguo objeto que esta sin modificar
+      regUser.splice(regUser.indexOf(usuario),1 , usuario)
+      // Se envia el nuevo array con el usuario o admin logeado
+      localStorage.setItem("regUser",JSON.stringify(regUser))
+      // Se le redirige al index con el usuario en linea
+      window.setTimeout(function () {
+        window.location.replace("index.html");
+      }, 1000)
+    // En caso de que no sean iguales las contraseñas se le informa
+     } else {
+      console.log("Contraseña Incorrecta")
+     }
+     // De no encontrarse en el array de usuarios se le informara que no esta registrado
   } else {
-    return "";
+    console.log("Usuario No Registrado")
   }
 }
 
@@ -84,13 +85,5 @@ function validatePass(input) {
     return true;
   } else {
     inputPass.className = "form-control is-invalid";
-  }
-}
-
-function gralValidate(inputUser, inputPass) {
-  if (validarCampos(inputUser) && validatePass(inputPass)) {
-    return true;
-  } else {
-    return false;
   }
 }

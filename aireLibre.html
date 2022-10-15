@@ -13,11 +13,9 @@
     <link rel="shortcut icon" href="./img/logo5.jpg" type="image/x-icon">
     <title>Rolling Store - Aire Libre</title>
 </head>
-
 <body>
     <header class="sticky-top">
         <!-- Inicio del nav-bar -->
-
         <!-- Primer NAV -->
         <nav class="navbar nav-bar-1  bg-dark navbar-expand-lg ">
             <div class="container-fluid pe-lg-5">
@@ -41,63 +39,46 @@
                                 Categorias
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item " href="#">Computacíon</a></li>
-                                <li><a class="dropdown-item" href="#">Electrodomésticos</a></li>
-                                <li><a class="dropdown-item" href="#">Aire Libre</a></li>
+                                <li><a class="dropdown-item " href="/computacion.html">Computacíon</a></li>
+                                <li><a class="dropdown-item" href="/electrodomesticos.html">Electrodomésticos</a></li>
+                                <li><a class="dropdown-item" href="/aireLibre.html">Aire Libre</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  fw-bold" href="#">Nosotros</a>
+                            <a class="nav-link  fw-bold" href="/nosotros.html">Nosotros</a>
                         </li>
-                        <div class="d-lg-flex flex-lg-row ms-lg-5">
-                            <li class="nav-item">
-                                <a class="nav-link  fw-bold" href="#">Registrar</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link  fw-bold" href="#">Login</a>
-                            </li>
+                        <div id="contenedorDeLogin" class="d-lg-flex flex-lg-row ms-lg-5 border border-dark rounded bg-dark bg-opacity-10">
                         </div>
-
                     </ul>
                 </div>
             </div>
         </nav>
         <!---------------->
-
         <!-- Segundo nav -->
         <nav class="navbar navbar-light bg-primary">
             <div class="container-fluid justify-content-center justify-content-lg-evenly">
-                <div
-                    class=" d-none opciones-categorias d-lg-inline d-flex justify-content-center align-items-center me-lg-5 ">
+                <div class=" d-none opciones-categorias d-lg-inline d-flex justify-content-center align-items-center me-lg-5 ">
                     <a class="navbar-brand  p-0 " href="./index.html">
                         <img class="mb-2" src="./img/index/navbar/home.svg" alt="icono-inicio" width="30" height="24">
                     </a>
-                    <a class="navbar-brand link-categorias " href="#">Computación</a>
-                    <a class="navbar-brand link-categorias  " href="#">Electrodomésticos</a>
-                    <a class="navbar-brand link-categorias " href="#">Aire Libre</a>
-
+                    <a class="navbar-brand link-categorias" href="/computacion.html">Computación</a>
+                    <a class="navbar-brand link-categorias" href="/electrodomesticos.html">Electrodomésticos</a>
+                    <a class="navbar-brand link-categorias" href="/aireLibre.html">Aire Libre</a>
                 </div>
-
                 <form class="d-flex align-items-center me-lg-5">
                     <input class="busqueda-nav form-control me-2 " type="search" placeholder="&#128269 Búsqueda"
                         aria-label=" Busqueda">
                 </form>
             </div>
         </nav>
-
         <!----------------->
-
         <!-- Fin del nav-bar -->
     </header>
     <main class="container-fluid flex-grow-1  ">
-        <div
-            class="container-fluid d-lg-flex flex-lg-row justify-content-lg-center align-items-center justify-content-lg-between align-items-lg-center mt-lg-3  ">
-
+        <div class="container-fluid d-lg-flex flex-lg-row justify-content-lg-center align-items-center justify-content-lg-between align-items-lg-center mt-lg-3  ">
             <!-- Inicio de columna 1 -->
-            <div
-                class="columna-1 bg-light row col-lg-3 justify-content-center  justify-content-lg-center  align-self-lg-start  py-3 d-lg-flex  justify-content-center">
-                <div
-                    class="contenedor-marca col-4 col-md-3 p-0 mt-2 m-lg-0  d-lg-flex justify-content-lg-center align-self-lg-center">
+            <div class="columna-1 bg-light rounded row col-lg-3 justify-content-center  justify-content-lg-center  align-self-lg-start  py-3 d-lg-flex  justify-content-center">
+                <div class="contenedor-marca col-4 col-md-3 p-0 mt-2 m-lg-0  d-lg-flex justify-content-lg-center align-self-lg-center">
                     <select class="form-select p-2 mt-lg-2 " aria-label="Default select example">
                         <option selected>Marcas</option>
                         <option value="1">One</option>
@@ -105,8 +86,7 @@
                         <option value="3">Three</option>
                     </select>
                 </div>
-                <div
-                    class=" p-lg-0 d-flex flex-column justify-content-center align-items-center d-lg-flex justify-content-lg-center align-items-lg-center w-100 mt-3">
+                <div class=" p-lg-0 d-flex flex-column justify-content-center align-items-center d-lg-flex justify-content-lg-center align-items-lg-center w-100 mt-3">
                     <h6>Precio</h6>
                     <form class="d-flex justify-content-evenly d-lg-flex justify-content-lg-around mt-2 w-100 ">
                         <div class="col-3">
@@ -119,15 +99,11 @@
                 </div>
             </div>
             <!-- Fin de columna 1 -->
-
             <!-- Inicio de columna 2 -->
             <div class="columna-2 row col-lg-9 justify-content-center  my-2">
                 <div>
                     <h3 class=" p-0 ps-md-5 mt-3">Aire Libre:</h3>
-
-                    <div
-                        class=" p-0  my-2 mx-0 d-flex  justify-content-center align-items-center  d-md-flex justify-content-md-center align-items-md-center d-lg-flex flex-lg-row justify-content-lg-start align-items-lg-center   row row-cols-lg-1 row-cols-lg-2 g-4 w-100 ">
-
+                    <div class=" p-0  my-2 mx-0 d-flex justify-content-center align-items-center d-md-flex justify-content-md-center align-items-md-center d-lg-flex flex-lg-row align-items-lg-center row row-cols-lg-1 row-cols-lg-2 g-4 w-100 ">
                         <div class="card md-3 mx-lg-4  p-lg-0 mt-3 shadow" style="max-width: 540px;">
                             <div class="card-img-body row g-0 align-items-center d-lg-flex flex-lg-column">
                                 <div class="div-img col-md-4 col-5 col-lg-7 d-flex align-items-center h-75">
@@ -306,24 +282,17 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
             <!-- Fin de columna 2 -->
-
-
         </div>
-
     </main>
     <footer>
         <div class="">
             <div class="informacion-footer container-fluid  d-lg-flex p-0 ">
-                <div
-                    class="marca-footer  w-100 p-4 d-flex flex-column justify-content-center align-items-center d-lg-flex flex-column  justify-content-lg-center align-items-lg-center border-bottom border-dark p-lg-0">
+                <div class="marca-footer  w-100 p-4 d-flex flex-column justify-content-center align-items-center d-lg-flex flex-column  justify-content-lg-center align-items-lg-center border-bottom border-dark p-lg-0">
                     <h4 class="text-center fw-bold mt-2">Rolling Store</h4>
                 </div>
-                <div
-                    class="contacto-footer  d-flex flex-column justify-content-center align-items-center  w-100 p-3 border-bottom border-dark ">
+                <div class="contacto-footer  d-flex flex-column justify-content-center align-items-center  w-100 p-3 border-bottom border-dark ">
                     <h4 class="text-center fw-bold ">Contacto</h4>
                     <div class="contacto-footer-informacion mt-2">
                         <p class="fw-bold ps-1"><img class="mb-1 fw-bold ps-1" src="./img/index/footer/contacto/map.svg"
@@ -334,21 +303,17 @@
                                 alt="icono-mail"> Rolling_Store@gmail.com</p>
                     </div>
                 </div>
-                <div
-                    class="redes-footer d-flex flex-column justify-content-center align-items-center d-md-flex flex-md-column justify-content-md-center align-items-md-center d-lg-flex justify-content-lg-center  w-100 py-3 px-lg-4 ">
+                <div class="redes-footer d-flex flex-column justify-content-center align-items-center d-md-flex flex-md-column justify-content-md-center align-items-md-center d-lg-flex justify-content-lg-center  w-100 py-3 px-lg-4 ">
                     <h4 class="text-center ">Seguinos en nuestras redes</h4>
-                    <div
-                        class="icono-redes  w-75  d-flex justify-content-around d-md-flex justify-content-md-evenly m-0 mt-3 mt-lg-3 px-md-4">
+                    <div class="icono-redes  w-75  d-flex justify-content-around d-md-flex justify-content-md-evenly m-0 mt-3 mt-lg-3 px-md-4">
                         <a href="https://www.facebook.com/" target="_blank"><img
                                 src="./img/index/footer/redes/facebook.png" alt="icono-facebook"></a>
                         <a href="https://www.instagram.com/" target="_blank"><img
                                 src="./img/index/footer/redes/instagram.png" alt="icono-instagram"></a>
                         <a href="https://twitter.com/account/access" target="_blank"><img
                                 src="./img/index/footer/redes/gorjeo.png" alt="icono-twitter"></a>
-
                     </div>
                 </div>
-
             </div>
             <div class="derechos-footer  text-white-50 p-2 d-flex justify-content-center align-items-center ">
                 <p class="m-0 text-white fw-bold"> Proyecto 2 - Rolling Store &copy 2022</p>
@@ -358,6 +323,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+        <script src="/js/imprimir-cerrarSesion.js"></script>
 </body>
 
 </html>
