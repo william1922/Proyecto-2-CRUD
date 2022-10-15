@@ -32,7 +32,7 @@ let producto3 = new Producto(3333,'Parrilla','Coleman',100,60000,'aireLibre','ht
 // productos.push(producto1,producto2,producto3)
 
 //paso 6 - guardar el array en el localStorage (EJECUTARLO UNA VEZ Y LUEGO COMENTARLO PORQUE SINO SE DUPLICA EN EL LOCALSTORAGE)
-localStorage.setItem('productos',JSON.stringify(productos))
+
 
 //paso 8 - creamos una funcion para agregar los productos que se activa cuando se da CLIC en el boton SUBMIT
 const agregarProducto = (e) => {
@@ -71,8 +71,8 @@ const llenarTabla = () => {
         <td>${producto.categoria}</td>
         <td>${producto.marca}</td>
         <td>${producto.cantidad}</td>
-        <td class="d-flex justify-content-around"><button href="#formulario" class="btn btn-warning btn-sm" onclick="editarProducto(${producto.codigo})"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button class="btn btn-danger btn-sm" onclick="eliminarProducto(${producto.codigo})"><i class="fa-solid fa-trash"></i></button>
+        <td class="d-flex justify-content-around"><button href="#formulario" class="btn btn-warning btn-sm" onclick="editarProducto('${producto.codigo}')"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="btn btn-danger btn-sm" onclick="eliminarProducto('${producto.codigo}')"><i class="fa-solid fa-trash"></i></button>
         </td>`
 
         tr.innerHTML = fila
@@ -90,6 +90,7 @@ const eliminarProducto = (codigo) => {
     const prod = productos.find(producto => producto.codigo === codigo)
     const arrayFiltrado = productos.filter(producto => producto.codigo !== codigo);
     console.log(arrayFiltrado)
+    console.log(prod)
     let confirmar = confirm(`Estas seguro de que deseas eliminar el producto "${prod.nombre}"?`)
     if(confirmar){
         // eliminamos el producto del array
@@ -119,7 +120,7 @@ const editarProducto = (codigo) => {
     const arrayFiltrado = productos.filter(producto => producto.codigo !== codigo)
     productos = arrayFiltrado;
     // agregamos el array al localStorage para tenerlo actualizado
-    localStorage.setItem("productos", JSON.stringify(productos));
+   
     // location.reload();
 }
 

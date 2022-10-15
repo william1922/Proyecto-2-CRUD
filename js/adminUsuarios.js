@@ -3,7 +3,7 @@ const arrayDeUsuarios = JSON.parse(localStorage.getItem("regUser")) || [];
 const tablaUsuarios = document.querySelector(".tabla-a-bordear")
 const totalUsuarios = document.querySelector("#cantidadUsuarios")
 
-totalUsuarios.innerHTML = arrayDeUsuarios.length
+totalUsuarios.innerHTML = arrayDeUsuarios.length -1
 
 const eliminarUsuario = (usuario) =>{
     const user = arrayDeUsuarios.find( element => {
