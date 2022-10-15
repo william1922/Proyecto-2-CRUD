@@ -251,4 +251,4 @@ let arrayProductos = [
     }
 ]
 
-// localStorage.setItem("productos",JSON.stringify(arrayProductos))
+localStorage.setItem("productos",JSON.stringify(arrayProductos))
