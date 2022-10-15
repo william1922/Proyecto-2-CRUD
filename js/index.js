@@ -11,6 +11,8 @@ let div_1 = document.querySelector(".div-1");
 let div_2 = document.querySelector(".div-2");
 let div_3 = document.querySelector(".div-3");
 
+const productosDetalles = JSON.parse(localStorage.getItem('productosdetalles')) || []
+localStorage.setItem("productosdetalles",JSON.stringify(productosDetalles))
 
 // // Traer la lista de productos desde el local Storage
 
@@ -20,6 +22,21 @@ let listaProductosDos = JSON.parse(localStorage.getItem('productos'));
 let productosComputacion = listaProductosDos.filter(producto => producto.categoria == "computacion");
 let productosElectrodomesticos = listaProductosDos.filter(producto => producto.categoria == "electrodomesticos");
 let productosAireLibre = listaProductosDos.filter(producto => producto.categoria == "aireLibre");
+
+const obtenerProductoAEnviar = (codigo) => {
+    let product = listaProductosDos.find(element => {
+        return element.codigo === codigo
+    })
+    return product
+}
+
+const enviarProductoDetalles = (codigo) => {
+    let productAEnviar = obtenerProductoAEnviar(codigo)
+    productosDetalles.push(productAEnviar)
+    localStorage.setItem("productosdetalles",JSON.stringify(productosDetalles))
+    window.location.replace("detalleProducto.html")
+}
+
 
 function cargarProducto() {
 
@@ -31,13 +48,13 @@ function cargarProducto() {
                 div_computacion.innerHTML += `
                 <div class="card md-3  mx-lg-3  p-lg-0  mt-3 shadow" style="max-width: 540px;">
                 <div class="row g-0 align-items-center my-3 d-lg-flex flex-lg-column">
-                    <div class="col-md-4 col-5 col-lg-7 d-flex align-items-center  h-75">
+                    <div onclick="enviarProductoDetalles('${producto.codigo}')" class="col-md-4 col-5 col-lg-7 d-flex align-items-center  h-75">
                         <img src="${producto.url}"
                             class="imagen-producto img-thumbnail img-fluid rounded-start" alt="imagen-producto">
                     </div>
                     <div class="col-md-8 col-7">
                         <div class="card-body d-flex flex-column align-items-center px-sm-0 py-sm-2  ">
-                            <a href="http://" class="text-decoration-none">
+                            <a onclick="enviarProductoDetalles('${producto.codigo}')" class="text-decoration-none">
                                 <h6 class="card-title">${producto.nombre}</h6>
                             </a>
                             <p class="m-0"><small>Marca: ${producto.marca}</small></p>
@@ -60,13 +77,13 @@ function cargarProducto() {
                 div_computacion.innerHTML += `
                 <div class="card md-3  mx-lg-3  p-lg-0  mt-3 shadow" style="max-width: 540px;">
                 <div class="row g-0 align-items-center my-3 d-lg-flex flex-lg-column">
-                    <div class="col-md-4 col-5 col-lg-7 d-flex align-items-center  h-75">
+                    <div onclick="enviarProductoDetalles('${p.codigo}')" class="col-md-4 col-5 col-lg-7 d-flex align-items-center  h-75">
                         <img src="${p.url}"
                             class="imagen-producto img-thumbnail img-fluid rounded-start" alt="imagen-producto">
                     </div>
                     <div class="col-md-8 col-7">
                         <div class="card-body d-flex flex-column align-items-center px-sm-0 py-sm-2  ">
-                            <a href="http://" class="text-decoration-none">
+                            <a href="http://" onclick="enviarProductoDetalles('${p.codigo}')" class="text-decoration-none">
                                 <h6 class="">${p.nombre}</h6>
                             </a>
                             <p class="m-0"><small>Marca: ${p.marca}</small></p>
@@ -93,13 +110,13 @@ function cargarProducto() {
             productosElectrodomesticos.forEach(producto => {
                 div_electrodomesticos.innerHTML += `<div class="card md-3  mx-lg-3  p-lg-0  mt-3 shadow" style="max-width: 540px;">
             <div class="row g-0 align-items-center my-3 d-lg-flex flex-lg-column">
-                <div class="col-md-4 col-5 col-lg-7 d-flex align-items-center  h-75">
+                <div onclick="enviarProductoDetalles('${producto.codigo}')" class="col-md-4 col-5 col-lg-7 d-flex align-items-center  h-75">
                     <img src="${producto.url}"
                         class="imagen-producto img-fluid img-thumbnail rounded-start" alt="imagen-producto">
                 </div>
                 <div class="col-md-8 col-7">
                     <div class="card-body d-flex flex-column align-items-center px-sm-0 py-sm-2  ">
-                        <a href="http://" class="text-decoration-none">
+                        <a href="http://" onclick="enviarProductoDetalles('${producto.codigo}')" class="text-decoration-none">
                             <h6 class="card-title">${producto.nombre}</h6>
                         </a>
                         <p class="m-0"><small>Marca: ${producto.marca}</small></p>
@@ -122,13 +139,13 @@ function cargarProducto() {
                 const producto = productosElectrodomesticos[i];
                 div_electrodomesticos.innerHTML += `<div class="card md-3  mx-lg-3  p-lg-0  mt-3 shadow" style="max-width: 540px;">
             <div class="row g-0 align-items-center my-3 d-lg-flex flex-lg-column">
-                <div class="col-md-4 col-5 col-lg-7 d-flex align-items-center  h-75">
+                <div onclick="enviarProductoDetalles('${producto.codigo}')" class="col-md-4 col-5 col-lg-7 d-flex align-items-center  h-75">
                     <img src="${producto.url}"
                         class="imagen-producto img-fluid img-thumbnail rounded-start" alt="imagen-producto">
                 </div>
                 <div class="col-md-8 col-7">
                     <div class="card-body d-flex flex-column align-items-center px-sm-0 py-sm-2  ">
-                        <a href="http://" class="text-decoration-none">
+                        <a href="http://" onclick="enviarProductoDetalles('${producto.codigo}')" class="text-decoration-none">
                             <h6 class="card-title">${producto.nombre}</h6>
                         </a>
                         <p class="m-0"><small>Marca: ${producto.marca}</small></p>
@@ -158,13 +175,13 @@ function cargarProducto() {
                 div_aire_libre.innerHTML += `
                 <div class="card md-3  mx-lg-3  p-lg-0  mt-3 shadow" style="max-width: 540px;">
                 <div class="row g-0 align-items-center my-3 d-lg-flex flex-lg-column">
-                    <div class="col-md-4 col-5 col-lg-7 d-flex align-items-center  h-75">
+                    <div onclick="enviarProductoDetalles('${producto.codigo}')" class="col-md-4 col-5 col-lg-7 d-flex align-items-center  h-75">
                         <img src="${producto.url}"
                             class="imagen-producto img-fluid img-thumbnail rounded-start" alt="imagen-producto">
                     </div>
                     <div class="col-md-8 col-7">
                         <div class="card-body d-flex flex-column align-items-center px-sm-0 py-sm-2  ">
-                            <a href="http://" class="text-decoration-none">
+                            <a href="http://" onclick="enviarProductoDetalles('${producto.codigo}')" class="text-decoration-none">
                                 <h6 class="card-title">${producto.nombre}</h6>
                             </a>
                             <p class="m-0"><small>Marca: ${producto.marca}</small></p>
@@ -187,13 +204,13 @@ function cargarProducto() {
                 let producto = productosAireLibre[i];
                 div_aire_libre.innerHTML += `<div class="card md-3  mx-lg-3  p-lg-0  mt-3 shadow" style="max-width: 540px;">
                 <div class="row g-0 align-items-center my-3 d-lg-flex flex-lg-column">
-                    <div class="col-md-4 col-5 col-lg-7 d-flex align-items-center  h-75">
+                    <div onclick="enviarProductoDetalles('${producto.codigo}')" class="col-md-4 col-5 col-lg-7 d-flex align-items-center  h-75">
                         <img src="${producto.url}"
                             class="imagen-producto img-fluid img-thumbnail rounded-start" alt="imagen-producto">
                     </div>
                     <div class="col-md-8 col-7">
                         <div class="card-body d-flex flex-column align-items-center px-sm-0 py-sm-2  ">
-                            <a href="http://" class="text-decoration-none">
+                            <a href="http://" onclick="enviarProductoDetalles('${producto.codigo}')" class="text-decoration-none">
                                 <h6 class="card-title">${producto.nombre}</h6>
                             </a>
                             <p class="m-0"><small>Marca: ${producto.marca}</small></p>

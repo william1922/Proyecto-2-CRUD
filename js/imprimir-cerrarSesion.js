@@ -71,14 +71,7 @@ let mostrarProductosCarrito = () => {
 
 }
 
-let carritoUsuario = () => {
-    let paraMostrarCarrito = carritoDeUsuario()
-    if (paraMostrarCarrito.length === 0) {
-        contenedor_card_carrito.innerHTML = `<h5 class = "text-danger"> Su carrito está vacio </h5>`
-    } else {
-        mostrarProductosCarrito()
-    }
-}
+
 
 
 
@@ -118,62 +111,6 @@ const imprimirEnLinea = () => {
                     alt="icono-carrito" style="width:1.6rem">
             </a>
 
-
-            <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Mi Carrito</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div id="body-modal" class="modal-body overflow-auto">
-     <h1>Hola</h1>
-
-                            <!-- Inicio de la card -->
-                            <!-- <div class="card mb-3" style="max-width: 540px;">
-                                <div class="row g-0 d-flex flex-row">
-                                    <div
-                                        class="col-md-4 d-flex justify-content-center d-md-flex justify-content-md-end">
-                                        <img src="https://images.fravega.com/f300/0e787868221e8c18cafeb5a527814dde.jpg.webp"
-                                            class="img-fluid align-items-center w-50" alt="...">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div
-                                            class="card-body d-flex flex-column align-items-center px-md-0">
-                                            <h5 class="card-title small">Celular Samsung Galaxy A23
-                                            </h5>
-                                            <p class="card-text small">$34.000</p>
-                                            <div
-                                                class="d-flex justify-content-between  align-items-center d-lg-flex justify-content-md-evenly  align-items-md-center  w-75">
-                                                <p class="card-text m-0"><small
-                                                        class="text-muted"><a
-                                                            class="btn btn-danger btn-sm " href="#"
-                                                            role="button">Borrar</a></small>
-                                                </p>
-                                                <p class="card-text m-0"><small
-                                                        class="text-muted"><a
-                                                            class="btn btn-primary btn-sm " href="#"
-                                                            role="button">Comprar</a></small>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- Fin de la card -->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger"
-                                data-bs-dismiss="modal">Cerrar</button>
-                            <!-- <button type="button" class="btn btn-primary">Understood</button> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
         </li>
         <li class="nav-item mx-lg-3 ">
             <a class="nav-link " href="#"><img src="./img/index/navbar/usuario.png"
