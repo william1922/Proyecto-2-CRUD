@@ -26,11 +26,14 @@
             <hr>
             <div class="col-12 col-md-8 offset-md-2 mb-5">
                 <!--FORMULARIO-->
-                <form id="formulario">
+                <form id="" class="needs-validation" novalidate>
                     <label class="mb-1">Codigo</label>
                     <input id="inputCodigo" class="form-control mb-3" type="text" placeholder="El codigo se genera automaticamente" disabled>
-                    <label class="mb-1" for="inputNombre">Nombre</label>
-                    <input class="form-control mb-3" type="text" id="inputNombre" name="inputNombre" placeholder="PC gamer" maxlength="50">
+                    <label class="mb-1 form-label" for="inputNombre">Nombre</label>
+                    <input class="form-control mb-3" type="text" id="inputNombre" name="inputNombre" placeholder="PC gamer" maxlength="50" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese un nombre.
+                    </div>                  
                     <label class="mb-1" for="inputMarca">Marca</label>
                     <input class="form-control mb-3" type="text" id="inputMarca" name="inputMarca" placeholder="Sony" maxlength="50">
                     <label class="mb-1" for="inputCantidad">Cantidad</label>
@@ -48,7 +51,7 @@
                     <input class="form-control mb-3" type="text" id="inputUrl" name="inputUrl" placeholder="Ingresar una URL de una imagen">
                     <label class="mb-1" for="inputDescripcion">Descripcion</label>
                     <textarea class="form-control mb-3" id="inputDescripcion" maxlength="250"></textarea>
-                    <button id="btnEnviar" class="btn btn-outline-primary">Enviar</button>
+                    <button type="submit" class="btn btn-outline-primary">Enviar</button>
                     <button id="btnActualizar" class="btn btn-outline-primary d-none">Actualizar</button>
                 </form>
             </div> <!--DIV que centra todo-->

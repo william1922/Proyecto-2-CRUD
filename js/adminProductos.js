@@ -74,6 +74,7 @@ let producto25 = new Producto(5651320213503,'Pileta estructural rectangular','Pe
 */
 let productosRS = JSON.parse(localStorage.getItem('productos')) || []
 
+/*
 let producto1 = new Producto(1324658721655,'PC gamer','HP',300,200.000,'computacion','https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1','Una computadora gamer')
 
 let producto2 = new Producto(1221453641527,'Teclado 2022','Sony',150,10.000,'computacion','https://images.pexels.com/photos/220357/pexels-photo-220357.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1','Un teclado de ultima generacion')
@@ -123,6 +124,7 @@ let producto23 = new Producto(1351321351313,'Sopladora aspiradora MJPSA116','Phi
 let producto24 = new Producto(3214532135135,'Cortadora de pasto eléctrica','Petri',25,37.200,'aireLibre','https://http2.mlstatic.com/D_NQ_NP_611326-MLA40185360782_122019-O.webp','Esta cortadora de pasto eléctrica cuenta con una bolsa recolectora de 32 L que facilita la tarea del usuario ya que es práctica para colocar y vaciar')
 
 let producto25 = new Producto(5651320213503,'Pileta estructural rectangular','Pelopincho',544,37.520,'aireLibre','https://http2.mlstatic.com/D_NQ_NP_980240-MLA40165269048_122019-O.webp','Con su válvula de desagüe, vas a poder sacar el agua de una manera mucho más rápida y simple cuando desees limpiarla o vaciarla')
+*/
 
 // productosRS.push(producto1,producto2,producto3,producto4,producto5,producto6,producto7,producto8,producto9,producto10,producto11,producto12,producto13,producto14,producto15,producto16,producto17,producto18,producto19,producto20,producto21,producto22,producto23,producto24,producto25)
 //paso 5 - llenamos el array con los 25 productos (EJECUTARLO UNA VEZ Y LUEGO COMENTARLO PORQUE SINO SE DUPLICA EN EL LOCALSTORAGE)
