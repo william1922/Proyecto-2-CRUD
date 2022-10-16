@@ -2,7 +2,7 @@ const arrayUsuarios = JSON.parse(localStorage.getItem("regUser")) || []
 
 let contenedor_card_carrito = document.querySelector("#body-modal");
 const divEnLinea = document.querySelector("#contenedorDeLogin")
-
+const cantidadCarrito = document.querySelector("#cantidadCarrito")
 
 const existeUsuario = () => {
     const user = arrayUsuarios.some(element => {
@@ -29,11 +29,11 @@ const cerrarSesion = () => {
 }
 
 
+
 let mostrarProductosCarrito = () => {
-    let paraMostrarCarrito = carritoDeUsuario()
-    paraMostrarCarrito.forEach(producto => {
-        contenedor_card_carrito.innerHTML +=`<h1>HOla</>
-        <div class="card mb-3" style="max-width: 540px;">
+    let paraMostrarCarrito = extraerUsuario()
+    paraMostrarCarrito.carrito.forEach(producto => {
+        contenedor_card_carrito.innerHTML +=`<div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0 d-flex flex-row">
                 <div
                     class="col-md-4 d-flex justify-content-center d-md-flex justify-content-md-end">
@@ -63,17 +63,18 @@ let mostrarProductosCarrito = () => {
                 </div>
             </div>
         </div>
-        
-        
-        
         `;
     });
 
 }
 
-
-
-
+if (existeUsuario()){
+    mostrarProductosCarrito()
+    let numeroCarrito = extraerUsuario()
+    if (numeroCarrito.carrito.length > 0) {
+    cantidadCarrito.innerHTML = numeroCarrito.carrito.length
+    }
+} 
 
 const imprimirEnLinea = () => {
     let usuarioLinea;
@@ -99,19 +100,7 @@ const imprimirEnLinea = () => {
             <a class="nav-link adm-exit fw-bold" href="#"> <img src="./img/index/navbar/exit.svg" alt="icono-carrito" style="width:1.5rem"></a>
         </li> `
         } else if (usuarioLinea.admin === "") {
-            divEnLinea.innerHTML = `<li class="nav-item align-self-center mt-lg-1">
-            <!-- <a class="nav-link d-none d.md-none d-lg-block " href="#"> <img
-                    src="./img/index/navbar/cart2.svg" alt="icono-carrito" style="width:1.6rem"></a> -->
-            <!-- <a class="nav-link usuario-carrito d-lg-none fw-bold text-danger " href="#">Carrito</a> -->
-            <!-- Button trigger modal -->
-            <a type="button" class="align-self-center text-decoration-none" href=""
-                data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                <p class="d-lg-none fw-bold text-danger mb-0">Carrito</p>
-                <img class="d-none d.md-none d-lg-block " src="./img/index/navbar/cart2.svg"
-                    alt="icono-carrito" style="width:1.6rem">
-            </a>
-
-        </li>
+            divEnLinea.innerHTML += `
         <li class="nav-item mx-lg-3 ">
             <a class="nav-link " href="#"><img src="./img/index/navbar/usuario.png"
                     alt="img-usuario" style="width:1.6rem"></a>
