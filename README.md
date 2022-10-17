@@ -20,7 +20,7 @@ ___
 
 ## Demo
 [Rolling Store](https://fluffy-dodol-6c41a4.netlify.app/index.html)
-___
+
 ## Librerias Usadas
 + Boostrap v5.1
 + Fontawesome
