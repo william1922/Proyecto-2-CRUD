@@ -19,7 +19,7 @@ ___
 + Modal de carrito de usuario desde cualquier pagina exepto admin
 
 ## Demo
-[Rolling Store](https://fluffy-dodol-6c41a4.netlify.app/index.html)
+[Rolling Store](https://rollingstore.netlify.app/)
 
 ## Librerias Usadas
 + Boostrap v5.1
