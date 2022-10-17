@@ -15,11 +15,15 @@ class Producto{
 //paso 2 - verificamos si existe la clave en localStorage, caso contrario se inicializa con un array vacio
 let productos = JSON.parse(localStorage.getItem('productos')) || []
 
+
+
 //paso 3 - declaramos las variables
 const formulario = document.getElementById('formulario')
 const tableBody = document.getElementById('tableBody')
 const inputcodigo = document.querySelector('#inputCodigo')
 inputcodigo.value = new Date().getTime()
+
+
 
 // Retorna el objeto que consida con el parametro enviado
 const extraerProducto = (codigo) => {
@@ -194,7 +198,28 @@ const editarProducto = (codigo) => {
 }
 
 //paso 7 - creamos el evento del formulario
-formulario.addEventListener('submit', agregarProducto)
 
+
+function activarEstilosDeValidacionFormulario() {
+
+    // Obtenemos el formulario 
+    let forms = document.querySelectorAll('.needs-validation')
+  
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  }
+activarEstilosDeValidacionFormulario()
+
+//paso 7 - creamos el evento del formulario
+formulario.addEventListener('submit', agregarProducto)
 //paso 10 - llamamos a la funcion llenarTabla al cargar la pagina
 llenarTabla()
