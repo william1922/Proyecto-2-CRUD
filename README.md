@@ -1,5 +1,5 @@
 # Proyecto-2-CRUD Rolling Code School
-___
+
 ## Nombre del Poyecto: >"Rolling Store"
 ___
 + Proyecto basado en [ximaro](https://ximaro.com.ar/), productos de tecnologia, aire libre y electrodomesticos. Se desarrollo el CRUD con los productos ya existentes para poder eliminar, crear y editar.
