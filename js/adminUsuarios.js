@@ -9,10 +9,28 @@ const eliminarUsuario = (usuario) =>{
     const user = arrayDeUsuarios.find( element => {
         return element.usuario === usuario
     })
-    arrayDeUsuarios.splice(arrayDeUsuarios.indexOf(user), 1)
+    Swal.fire({
+        title: 'Desea eliminar usuario?',
+        text: "",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Eliminado',
+            '',
+            'success'
+          )
+           arrayDeUsuarios.splice(arrayDeUsuarios.indexOf(user), 1)
     localStorage.setItem("regUser", JSON.stringify(arrayDeUsuarios))
     tablaUsuarios.innerHTML = '';
     imprimirUsuarios()
+        }
+      })
+   
 }
 
 const imprimirUsuarios = () => {

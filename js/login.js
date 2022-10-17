@@ -48,17 +48,46 @@ function login(e) {
       regUser.splice(regUser.indexOf(usuario),1 , usuario)
       // Se envia el nuevo array con el usuario o admin logeado
       localStorage.setItem("regUser",JSON.stringify(regUser))
-      // Se le redirige al index con el usuario en linea
-      window.setTimeout(function () {
-        window.location.replace("index.html");
-      }, 1000)
+
+      let timerInterval
+Swal.fire({
+  title: 'Cargando Datos.',
+  html: 'Quedan <b></b>.',
+  timer: 1500,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading()
+    const b = Swal.getHtmlContainer().querySelector('b')
+    timerInterval = setInterval(() => {
+      b.textContent = Swal.getTimerLeft()
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    window.location.replace("index.html");
+  }
+})
     // En caso de que no sean iguales las contraseñas se le informa
      } else {
-      console.log("Contraseña Incorrecta")
+      Swal.fire({
+        icon: 'error',
+        title: '',
+        text: 'Contraseña incorrecta',
+        footer: '<a class="text-decoration-none" href="/404.html">Recuperar Contraseña</a>'
+      })
      }
      // De no encontrarse en el array de usuarios se le informara que no esta registrado
   } else {
-    console.log("Usuario No Registrado")
+    Swal.fire({
+      icon: 'error',
+      title: '',
+      text: 'Usuario no registrado o incorrecto',
+      footer: '<a class="text-decoration-none" href="/registro.html">Registrarse</a>'
+    })
   }
 }
 

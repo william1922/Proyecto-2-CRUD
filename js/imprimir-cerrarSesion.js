@@ -25,6 +25,7 @@ const verCarrito = () => {
       contenedorModal.style.opacity = "1"
     contenedorModal.style.visibility = "visible"
     moverModal.style.transform = "translatex(0%)"
+    mostrarProductosCarrito()
 }
 
 const obtenerProducto = (codigo) => {
@@ -56,9 +57,7 @@ const agregarAlCarrito = (codigo) => {
         user.carrito.push(productoAGuardar);
         arrayUsuarios.splice(arrayUsuarios.indexOf(user), 1, user);
         localStorage.setItem("regUser",JSON.stringify(arrayUsuarios))
-        mostrarCarrito
         cantidadProductosCarrito()
-        mostrarProductosCarrito()
     }
 }
 
@@ -71,9 +70,7 @@ const extraerUsuario = () => {
 
 const cerrarSesion = () => {
     let user = extraerUsuario()
-    console.log(user)
     user.userOn = ""
-    console.log(user)
     arrayUsuarios.splice(arrayUsuarios.indexOf(user), 1, user);
     localStorage.setItem("regUser",JSON.stringify(arrayUsuarios))
     window.location.replace("index.html")
@@ -81,11 +78,10 @@ const cerrarSesion = () => {
 
 function cantidadProductosCarrito(){
 if (existeUsuario()){
-    mostrarProductosCarrito()
-    let numeroCarrito = extraerUsuario()
-    if (numeroCarrito.carrito.length > 0) {
+    let user = extraerUsuario()
+    if (user.carrito.length > 0) {
         cantidadCarrito.innerHTML = ""
-    cantidadCarrito.innerHTML = numeroCarrito.carrito.length
+    cantidadCarrito.innerHTML = user.carrito.length
     }
 } 
 }
@@ -95,6 +91,7 @@ function mostrarProductosCarrito(){
     let paraMostrarCarrito = extraerUsuario()
     if (paraMostrarCarrito.carrito.length > 0){
         //cantidadProductosCarrito
+        contenedor_card_carrito.innerHTML = ""
     paraMostrarCarrito.carrito.forEach(producto => {
         contenedor_card_carrito.innerHTML +=`<div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0 d-flex flex-row">
@@ -128,8 +125,10 @@ function mostrarProductosCarrito(){
         </div>
         `;
     });
-    } else {
+    } else if (paraMostrarCarrito.carrito.length === 0 ){
         contenedor_card_carrito.innerHTML = `<h1>Carrito Vacio</h1>`
+    } else {
+
     }
 }
 

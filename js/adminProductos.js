@@ -18,45 +18,97 @@ let productos = JSON.parse(localStorage.getItem('productos')) || []
 //paso 3 - declaramos las variables
 const formulario = document.getElementById('formulario')
 const tableBody = document.getElementById('tableBody')
-
-//paso 4 - creamos 3 productos para tener algo (no hay que hacerlo asi, pero solo es para probar la aplicacion, luego lo eliminamos)
-/*
-let producto1 = new Producto(1111,'PC gamer','HP',300,200000,'computacion','https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1','Una computadora gamer')
-
-let producto2 = new Producto(2222,'Teclado 2022','Sony',150,10000,'computacion','https://images.pexels.com/photos/220357/pexels-photo-220357.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1','Un teclado de ultima generacion')
-
-let producto3 = new Producto(3333,'Parrilla','Coleman',100,60000,'aireLibre','https://images.pexels.com/photos/1857732/pexels-photo-1857732.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1','Una parrilla para preparar buenas comidas')
-*/
-
-//paso 5 - llenamos el array con los 3 productos (EJECUTARLO UNA VEZ Y LUEGO COMENTARLO PORQUE SINO SE DUPLICA EN EL LOCALSTORAGE)
-// productos.push(producto1,producto2,producto3)
 const inputcodigo = document.querySelector('#inputCodigo')
 inputcodigo.value = new Date().getTime()
-//paso 6 - guardar el array en el localStorage (EJECUTARLO UNA VEZ Y LUEGO COMENTARLO PORQUE SINO SE DUPLICA EN EL LOCALSTORAGE)
+
+// Retorna el objeto que consida con el parametro enviado
+const extraerProducto = (codigo) => {
+    let producto = productos.find(element => {
+        return element.codigo === codigo.toString()
+    })
+    return producto
+}
+
+// Retorna un booleano si algun objeto tiene el mismo codigo
 const comprobarProducto = (codigo) => {
     let exist = productos.some(element => {
-        return element.codigo === codigo.toString()
+        return element.codigo === codigo
     })
     return exist
 }
 
 //paso 8 - creamos una funcion para agregar los productos que se activa cuando se da CLIC en el boton SUBMIT
 const agregarProducto = (e) => {
-    e.preventDefault()
-    
-    // let inputCodigo = productos[productos.length - 1].codigo + 1 // para evitar problemas no usamos esto, sino lo siguiente, pero esto toma la ULTIMA posicion del array y le suma 1
-    //let codigo = new Date().getTime() // esta es otra alternativa de obtener el codigo
-    let nombre = document.getElementById('inputNombre').value
-    let marca = document.getElementById('inputMarca').value
-    let cantidad = document.getElementById('inputCantidad').value
-    let precio = document.getElementById('inputPrecio').value
-    let categoria = document.getElementById('selectCategoria').value
-    let url = document.getElementById('inputUrl').value
-    let descripcion = document.getElementById('inputDescripcion').value
-    // colocamos el nuevo objeto en el array
-    productos.push(new Producto(nombre,marca,cantidad,precio,categoria,url,descripcion))
-    // agregamos el array al localStorage para tenerlo actualizado
-    localStorage.setItem('productos',JSON.stringify(productos))
+    e.preventDefault() 
+        
+        let nombre = document.getElementById('inputNombre').value
+        let marca = document.getElementById('inputMarca').value
+        let cantidad = document.getElementById('inputCantidad').value
+        let precio = document.getElementById('inputPrecio').value
+        let categoria = document.getElementById('selectCategoria').value
+        let url = document.getElementById('inputUrl').value
+        let descripcion = document.getElementById('inputDescripcion').value
+
+        //validaciones
+        const regNumber = /^(\d*\.)?\d+$/ // expresion para validar numeros positivos con/sin decimales
+        const regex = /^(ftp|http|https):\/\/[^ "]+$/; // expresion regular para validar una URL
+        const validarURL = regex.test(url);
+        const validarCantidad = regNumber.test(cantidad)
+        const validarPrecio = regNumber.test(precio)
+        if(inputcodigo.value === '' || nombre === '' || marca === '' || cantidad === '' || precio === '' || categoria === 'Elegir una categoria...' || url === '' || descripcion === ''){
+            return Swal.fire(
+                'Error!',
+                'Todos los campos deben estar completos',
+                'error'
+            )
+        }else if(!validarURL){
+            return Swal.fire(
+                'Error!',
+                'La URL tiene que ser valida',
+                'error'
+            )
+        }else if(!validarCantidad){
+            return Swal.fire(
+                'Error!',
+                'Solo se aceptan dígitos positivos (Cantidad)',
+                'error'
+            )
+        }else if(!validarPrecio){
+            return Swal.fire(
+                'Error!',
+                'Solo se aceptan dígitos positivos (Precio)',
+                'error'
+            )
+        }
+    if (comprobarProducto(inputcodigo.value)) {
+        let productoAnterior, guardarCodigo
+        productoAnterior = extraerProducto(inputcodigo.value)
+        guardarCodigo = productoAnterior.codigo
+         Swal.fire({
+            title: 'Desea guardar los cambios?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Guardar',
+            denyButtonText: `Cancelar`,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              let objetoProducto = new Producto(guardarCodigo, nombre,marca,cantidad,precio,categoria,url,descripcion)
+              productos.splice(productos.indexOf(productoAnterior), 1, objetoProducto)
+              localStorage.setItem('productos',JSON.stringify(productos))
+              window.location.reload()
+            } else if (result.isDenied) {
+              Swal.fire('Cambios cancelados', '', 'info')
+            }
+          })
+        
+    } else {
+        let objetoProducto = new Producto(inputcodigo.value, nombre,marca,cantidad,precio,categoria,url,descripcion)
+        productos.push(objetoProducto)
+        // agregamos el array al localStorage para tenerlo actualizado
+        localStorage.setItem('productos',JSON.stringify(productos))
+        window.location.reload()
+    }
     //reseteamos el formulario
     formulario.reset()
     //hacemos focus al input del nombre
@@ -78,7 +130,7 @@ const llenarTabla = () => {
         <td>${producto.categoria}</td>
         <td>${producto.marca}</td>
         <td>${producto.cantidad}</td>
-        <td class="d-flex justify-content-around"><button href="#formulario" class="btn btn-warning btn-sm" onclick="editarProducto('${producto.codigo}')"><i class="fa-solid fa-pen-to-square"></i></button>
+        <td class="d-flex justify-content-around"><a href="#formulario"><button class="btn btn-warning btn-sm" onclick="editarProducto('${producto.codigo}')"><i class="fa-solid fa-pen-to-square"></i></button></a>
         <button class="btn btn-danger btn-sm" onclick="eliminarProducto('${producto.codigo}')"><i class="fa-solid fa-trash"></i></button>
         </td>`
 
@@ -92,30 +144,42 @@ const llenarTabla = () => {
 
 //paso 13 - creamos una funcion para eliminar un producto
 const eliminarProducto = (codigo) => {
-    console.log(codigo)
     // buscamos el producto que queremos eliminar
-    const prod = productos.find(producto => producto.codigo === codigo)
     const arrayFiltrado = productos.filter(producto => producto.codigo !== codigo);
-    console.log(arrayFiltrado)
-    console.log(prod)
-    let confirmar = confirm(`Estas seguro de que deseas eliminar el producto "${prod.nombre}"?`)
-    if(confirmar){
-        // eliminamos el producto del array
-        productos = arrayFiltrado
+    Swal.fire({
+        title: 'Desea eliminar este producto?',
+        text: "",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Eliminado',
+            '',
+            'success'
+          )
+          productos = arrayFiltrado
         // agregamos el array al localStorage para tenerlo actualizado
         localStorage.setItem('productos',JSON.stringify(productos))
-        alert('El producto se ha eliminado')
         // actualizamos la tabla
         llenarTabla()
-    }
+        }
+      })
+    //let confirmar = confirm(`Estas seguro de que deseas eliminar el producto "${prod.nombre}"?`)
+    //if(confirmar){
+        // eliminamos el producto del array
+        
+    //}
 }
 
 //paso 15 - creamos una funcion para editar un producto
 const editarProducto = (codigo) => {
-    console.log(codigo)
     // buscamos el producto que queremos editar
-    const prod = productos.find(producto => producto.codigo === codigo);
-    console.log(prod)
+    const prod = extraerProducto(codigo)
+    inputcodigo.value = prod.codigo
     document.getElementById('inputNombre').value = prod.nombre
     document.getElementById('inputMarca').value = prod.marca
     document.getElementById('inputCantidad').value = prod.cantidad
@@ -124,8 +188,6 @@ const editarProducto = (codigo) => {
     document.getElementById('inputUrl').value = prod.url
     document.getElementById('inputDescripcion').value = prod.descripcion
     // borrar el producto del array
-    const arrayFiltrado = productos.filter(producto => producto.codigo !== codigo)
-    productos = arrayFiltrado;
     // agregamos el array al localStorage para tenerlo actualizado
    
     // location.reload();

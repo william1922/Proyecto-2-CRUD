@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/adminProductos.css">
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/1d4e9027fc.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/footer.css">
     <title>Rolling Store</title>
@@ -67,29 +68,30 @@
             <hr>
             <div class="col-12 col-md-8 offset-md-2 mb-5">
                 <!--FORMULARIO-->
-                <form id="formulario">
+                <!--FORMULARIO se agregaron las validaciones-->
+                <form id="formulario" class="needs-validation" novalidate>
                     <label class="mb-1">Codigo</label>
                     <input id="inputCodigo" class="form-control mb-3" type="text" placeholder="El codigo se genera automaticamente" disabled>
                     <label class="mb-1" for="inputNombre">Nombre</label>
-                    <input class="form-control mb-3" type="text" id="inputNombre" placeholder="PC gamer">
+                    <input class="form-control mb-3" type="text" id="inputNombre" name="inputNombre" placeholder="PC gamer" maxlength="50" required>
                     <label class="mb-1" for="inputMarca">Marca</label>
-                    <input class="form-control mb-3" type="text" id="inputMarca" placeholder="Sony">
+                    <input class="form-control mb-3" type="text" id="inputMarca" name="inputMarca" placeholder="Sony" maxlength="50" required>
                     <label class="mb-1" for="inputCantidad">Cantidad</label>
-                    <input class="form-control mb-3" type="number" id="inputCantidad" placeholder="150">
+                    <input class="form-control mb-3" type="text" maxlength="5" id="inputCantidad" name="inputCantidad" min="1" placeholder="150" required>
                     <label class="mb-1" for="inputPrecio">Precio</label>
-                    <input class="form-control mb-3" type="text" id="inputPrecio" placeholder="20000">
+                    <input class="form-control mb-3" type="text" maxlength="7" min="1" id="inputPrecio" name="inputPrecio" placeholder="20.000" required>
                     <label class="mb-1" for="categoria">Categoria</label>
-                    <select class="form-control mb-3" id="selectCategoria">
-                        <option selected disabled>Elegir una categoria...</option>
+                    <select class="form-control mb-3" id="selectCategoria" required>
+                        <option selected disabled value="">Elegir una categoria...</option>
                         <option value="computacion">Computacion</option>
                         <option value="electrodomesticos">Electrodomesticos</option>
                         <option value="aireLibre">Aire Libre</option>
                     </select>
                     <label class="mb-1" for="inputUrl">URL</label>
-                    <input class="form-control mb-3" type="text" id="inputUrl" placeholder="Ingresar una URL de una imagen">
+                    <input class="form-control mb-3" type="text" id="inputUrl" name="inputUrl" maxlength="3000" placeholder="Ingresar una URL de una imagen" required>
                     <label class="mb-1" for="inputDescripcion">Descripcion</label>
-                    <textarea class="form-control mb-3" id="inputDescripcion" required></textarea>
-                    <button class="btn btn-outline-primary">Enviar</button>
+                    <textarea class="form-control mb-3" id="inputDescripcion" maxlength="250" required></textarea>
+                    <button id="btnEnviar" class="btn btn-outline-primary">Enviar</button>
                 </form>
             </div> <!--DIV que centra todo-->
             <hr>
@@ -150,6 +152,7 @@
     </footer>
     <!-- SCRIPT DE BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.37/dist/sweetalert2.all.min.js"></script>
     <!-- MI JS -->
     <script src="js/adminProductos.js"></script>
     <script src="/js/imprimir-cerrarSesion.js"></script>
