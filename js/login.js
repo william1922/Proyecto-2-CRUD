@@ -25,7 +25,7 @@ const confirmarUsuarioRegistrado = (usuario) => {
 }
 
 // Retorna el objeto mediante la comparacion de un atributo
-const obtenerUsuario = (usuario) => {
+const obtenerUsuarioLogin = (usuario) => {
   const contenedorUsuario = regUser.find(element => {
     return element.usuario === usuario.value;
   })
