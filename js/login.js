@@ -39,7 +39,7 @@ function login(e) {
   // Se confirma si el usuario esta registrado
   if (confirmarUsuarioRegistrado(inputUser)){
     // Guardo el objeto en una variable
-    usuario = obtenerUsuario(inputUser)
+    usuario = obtenerUsuarioLogin(inputUser)
     // Comparo que que la contraseña ingresada sea igual al atributo contraseña del objeto
      if (usuario.contraseña === inputPass.value){
       // Cambio el atributo a "true" para posteriores usos en otras funsiones
