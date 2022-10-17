@@ -2,6 +2,7 @@ const productosairelibrediv = document.querySelector('#productos-airelibre')
 const listaProductosDos = JSON.parse(localStorage.getItem('productos'))
 let productosAireLibre = listaProductosDos.filter(producto => producto.categoria == "aireLibre");
 const productosDetalles = JSON.parse(localStorage.getItem('productosdetalles')) || []
+
 const obtenerProductoAEnviar = (codigo) => {
     let product = listaProductosDos.find(element => {
         return element.codigo === codigo
@@ -12,7 +13,7 @@ const obtenerProductoAEnviar = (codigo) => {
 const enviarProductoDetalles = (codigo) => {
     let productAEnviar = obtenerProductoAEnviar(codigo)
     productosDetalles.push(productAEnviar)
-    localStorage.setItem("productosdetalles",JSON.stringify(productosDetalles))
+    localStorage.setItem("productosdetalles", JSON.stringify(productosDetalles))
     window.location.replace("detalleProducto.html")
 }
 

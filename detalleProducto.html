@@ -51,13 +51,14 @@
                         <div id="contenedorDeLogin"
                             class="d-lg-flex flex-lg-row ms-lg-5 border border-dark rounded bg-dark bg-opacity-10">
                             <!-- Button trigger modal -->
-                                    <button type="button" onclick="verCarrito()" id="abrirCarrito" class="btn position-relative abrir-Carrito">
-                                        <img src="./img/index/navbar/cart2.svg"
-                                    alt="icono-carrito" style="width:1.6rem">
-                                        <span id="cantidadCarrito" class="position-absolute top-0 rounded-circle start-100 translate-middle w-50 h6 text-white bg-danger">
-                                          <span class="visually-hidden">unread messages</span>
-                                        </span>
-                                      </button>
+                            <button type="button" onclick="verCarrito()" id="abrirCarrito"
+                                class="btn position-relative abrir-Carrito">
+                                <img src="./img/index/navbar/cart2.svg" alt="icono-carrito" style="width:1.6rem">
+                                <span id="cantidadCarrito"
+                                    class="position-absolute top-0 rounded-circle start-100 translate-middle w-50 h6 text-white bg-danger">
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </button>
                         </div>
                     </ul>
                 </div>
@@ -107,41 +108,50 @@
     <!--Seccion de los detalles de producto-->
     <section class="d-flex flex-column align-items-center my-3">
         <!--Seccion de la imagen y detalle de producto-->
-        <div class="d-flex w-100 contenedor-imagen-detalles flex-column d-md-flex flex-md-row justify-content-center justify-content-md-between">
+        <div
+            class="d-flex w-100 contenedor-imagen-detalles flex-column d-md-flex flex-md-row justify-content-center justify-content-md-between">
             <!--Imagen en responsive-->
             <div class="align-self-center w-100 py-2 imagen-responsive d-sm-block d-md-none">
-                <img id="imagen-de-producto-responsive" src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="px-5 img-thumbnail container-fluid rounded-bottom"
-                    alt="imagen del producto">
+                <img id="imagen-de-producto-responsive"
+                    src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class="px-5 img-thumbnail container-fluid rounded-bottom" alt="imagen del producto">
             </div>
             <!--Fin de imagen en responsive-->
             <!--Inicio de imagen en md-->
-            <div class="d-md-flex imagen-en-md w-100 px-4 flex-md-column d-none justify-content-md-center align-items-md-center d-sm-none d-md-block rounded-start shadow-sm">
-                <img id="imagen-de-producto" src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="container h-75 img-thumbnail" alt="imagen del producto">
+            <div
+                class="d-md-flex imagen-en-md w-100 px-4 flex-md-column d-none justify-content-md-center align-items-md-center d-sm-none d-md-block rounded-start shadow-sm">
+                <img id="imagen-de-producto"
+                    src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class="container h-75 img-thumbnail" alt="imagen del producto">
             </div>
             <!--Fin de imagen en md-->
             <!--Inicio de los detalles de Producto -->
-            <div class="py-md-5 w-100 shadow-sm px-md-4 rounded-end justify-content-center contenedor-detalles container-fluid d-flex flex-column">
+            <div
+                class="py-md-5 w-100 shadow-sm px-md-4 rounded-end justify-content-center contenedor-detalles container-fluid d-flex flex-column">
                 <ul type="none" class="list-group">
                     <li id="marca-de-producto" class="producto-marca mb-3 text-center">LG</li>
                     <li id="nombre-de-producto" class="h5">Nombre del Producto</li>
-                    <li id="precio-de-producto" class="h3 text-danger"><strong class="h1 text-success fw-bolder">$</strong> 9999</li>
+                    <li id="precio-de-producto" class="h3 text-danger"><strong
+                            class="h1 text-success fw-bolder">$</strong> 9999</li>
                     <li id="categoria-de-producto" class="h5">Categoria</li>
-                    <li class="producto-stock d-flex h6 flex-row">Stock: <p  id="stock-de-producto" class="px-3">9</p>
+                    <li class="producto-stock d-flex h6 flex-row">Stock: <p id="stock-de-producto" class="px-3">9</p>
                     </li>
                 </ul>
                 <div class="d-flex flex-row pb-2 d-sm-flex flex-md-row justify-content-around">
                     <button class="py-3 rounded boton-de-comprar w-50">COMPRAR</button>
-                    <button class="py-3 boton-de-carrito rounded w-25"><i class="fa-solid fa-cart-plus fa-2xl"></i></button>
+                    <button class="py-3 boton-de-carrito rounded w-25"><i
+                            class="fa-solid fa-cart-plus fa-2xl"></i></button>
                 </div>
             </div>
-             <!--Fin de los detalles de Producto -->
+            <!--Fin de los detalles de Producto -->
             <hr class="d-md-none">
         </div>
         <!--Fin de seccion de la imagen y detalle de producto-->
         <!--Inicio de seccion de descripcion-->
         <div class="d-flex rounded contenido-descripcion py-5 flex-column justify-content-center align-items-center">
             <p class="text-center titulo-descripcion">Descripcion</p>
-            <p id="descripcion-de-producto" class=" text-descripcion text-center my-3 mx-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti asperiores fugiat ut,
+            <p id="descripcion-de-producto" class=" text-descripcion text-center my-3 mx-4">Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Corrupti asperiores fugiat ut,
                 nam quibusdam perspiciatis reprehenderit sed? Reprehenderit voluptates dolorem unde doloremque modi
                 nostrum, at aut libero ipsa quo animi.</p>
         </div>
@@ -150,10 +160,12 @@
     <footer>
         <div class="">
             <div class="informacion-footer container-fluid  d-lg-flex p-0 ">
-                <div class="marca-footer  w-100 p-4 d-flex flex-column justify-content-center align-items-center d-lg-flex flex-column  justify-content-lg-center align-items-lg-center border-bottom border-dark p-lg-0">
+                <div
+                    class="marca-footer  w-100 p-4 d-flex flex-column justify-content-center align-items-center d-lg-flex flex-column  justify-content-lg-center align-items-lg-center border-bottom border-dark p-lg-0">
                     <h4 class="text-center fw-bold mt-2">Rolling Store</h4>
                 </div>
-                <div class="contacto-footer  d-flex flex-column justify-content-center align-items-center  w-100 p-3 border-bottom border-dark ">
+                <div
+                    class="contacto-footer  d-flex flex-column justify-content-center align-items-center  w-100 p-3 border-bottom border-dark ">
                     <h4 class="text-center fw-bold ">Contacto</h4>
                     <div class="contacto-footer-informacion mt-2">
                         <p class="fw-bold ps-1"><img class="mb-1 fw-bold ps-1" src="./img/index/footer/contacto/map.svg"
@@ -167,7 +179,8 @@
                 <div
                     class="redes-footer d-flex flex-column justify-content-center align-items-center d-md-flex flex-md-column justify-content-md-center align-items-md-center d-lg-flex justify-content-lg-center  w-100 py-3 px-lg-4 ">
                     <h4 class="text-center ">Seguinos en nuestras redes</h4>
-                    <div class="icono-redes  w-75  d-flex justify-content-around d-md-flex justify-content-md-evenly m-0 mt-3 mt-lg-3 px-md-4">
+                    <div
+                        class="icono-redes  w-75  d-flex justify-content-around d-md-flex justify-content-md-evenly m-0 mt-3 mt-lg-3 px-md-4">
                         <a href="https://www.facebook.com/" target="_blank"><img
                                 src="./img/index/footer/redes/facebook.png" alt="icono-facebook"></a>
                         <a href="https://www.instagram.com/" target="_blank"><img
@@ -188,10 +201,10 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-        crossorigin="anonymous"></script> 
-        <script src="/js/detalleProducto.js"></script>
-        <script src="/js/imprimir-cerrarSesion.js"></script>
-       
+        crossorigin="anonymous"></script>
+    <script src="/js/detalleProducto.js"></script>
+    <script src="/js/imprimir-cerrarSesion.js"></script>
+
 </body>
 
 </html>

@@ -1,8 +1,7 @@
 /* ---------- Footer ---------------- */
 
-footer{
-      
-    background: linear-gradient(to top,#f89737,#f5d63a)
+footer {
+  background: linear-gradient(to top, #f89737, #f5d63a)
 }
 
 footer div.informacion-footer div.redes-footer div.icono-redes a img {
@@ -15,15 +14,10 @@ div.marca-footer img {
 }
 
 footer div.informacion-footer div.redes-footer div.icono-redes a img:hover {
-  /* width: 2.5rem;
-  position: relative;
-   */
   transform: scale(1.5);
-  
-
 }
 
-div.contacto-footer-informacion img{
+div.contacto-footer-informacion img {
   width: 1.7rem;
 }
 
@@ -31,6 +25,7 @@ footer h4 {
   font-size: 1.5rem;
 }
 
-footer div.derechos-footer{
-  background-color: rgb(41, 52, 98);;
+footer div.derechos-footer {
+  background-color: rgb(41, 52, 98);
+  ;
 }

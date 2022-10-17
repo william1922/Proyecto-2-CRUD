@@ -1,23 +1,23 @@
-*{
+* {
     box-sizing: border-box;
 }
 
 
-.img-card{
+.img-card {
     width: 200px;
     height: 200px;
 }
 
-.social-logo{
+.social-logo {
     width: 30px;
     height: 30px;
 }
 
-.card{
+.card {
     transition: 0.5s;
 }
 
-.card:hover{
+.card:hover {
     background-color: gray;
     color: white;
     transform: scale(1.2);
