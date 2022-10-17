@@ -1,18 +1,15 @@
 // Seleccionamos los contenedores donde vamos agregar las tarjetas
 
 let div_computacion = document.querySelector(".div-computacion");
-
 let div_electrodomesticos = document.querySelector(".div-electrodomesticos");
-
 let div_aire_libre = document.querySelector(".div-aire-libre");
-
 
 let div_1 = document.querySelector(".div-1");
 let div_2 = document.querySelector(".div-2");
 let div_3 = document.querySelector(".div-3");
 
 const productosDetalles = JSON.parse(localStorage.getItem('productosdetalles')) || []
-localStorage.setItem("productosdetalles",JSON.stringify(productosDetalles))
+localStorage.setItem("productosdetalles", JSON.stringify(productosDetalles))
 
 // // Traer la lista de productos desde el local Storage
 
@@ -33,10 +30,9 @@ const obtenerProductoAEnviar = (codigo) => {
 const enviarProductoDetalles = (codigo) => {
     let productAEnviar = obtenerProductoAEnviar(codigo)
     productosDetalles.push(productAEnviar)
-    localStorage.setItem("productosdetalles",JSON.stringify(productosDetalles))
+    localStorage.setItem("productosdetalles", JSON.stringify(productosDetalles))
     window.location.replace("detalleProducto.html")
 }
-
 
 function cargarProducto() {
 
@@ -164,10 +160,8 @@ function cargarProducto() {
         </di>`
             }
         }
-
     }
     if (productosAireLibre.length === 0) {
-
         div_3.style.display = "none";
     } else {
         if (productosAireLibre.length < 4) {
@@ -231,7 +225,6 @@ function cargarProducto() {
         }
     }
 }
-
 
 cargarProducto();
 

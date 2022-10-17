@@ -8,12 +8,10 @@ const cantidadCarrito = document.querySelector("#cantidadCarrito");
 const mostrarCarrito = document.querySelector("#abrirCarrito")
 const moverModal = document.querySelector(".modalMostrar")
 
-
-
 const cerrarCarrito = () => {
     moverModal.style.transform = "translatex(250%)"
 
-    setTimeout( () => {
+    setTimeout(() => {
         contenedorModal.style.visibility = "hidden"
         contenedorModal.style.opacity = "0"
         moverModal.style.transform = "translatex(-250%)"
@@ -22,7 +20,7 @@ const cerrarCarrito = () => {
 
 const verCarrito = () => {
     contenedorModal.style.zindex = "10000";
-      contenedorModal.style.opacity = "1"
+    contenedorModal.style.opacity = "1"
     contenedorModal.style.visibility = "visible"
     moverModal.style.transform = "translatex(0%)"
     mostrarProductosCarrito()
@@ -51,12 +49,12 @@ const obtenerUsuario = () => {
 
 const agregarAlCarrito = (codigo) => {
     let user, productoAGuardar
-    if (existeUsuario()){
+    if (existeUsuario()) {
         user = obtenerUsuario();
         productoAGuardar = obtenerProducto(codigo);
         user.carrito.push(productoAGuardar);
         arrayUsuarios.splice(arrayUsuarios.indexOf(user), 1, user);
-        localStorage.setItem("regUser",JSON.stringify(arrayUsuarios))
+        localStorage.setItem("regUser", JSON.stringify(arrayUsuarios))
         cantidadProductosCarrito()
     }
 }
@@ -72,28 +70,28 @@ const cerrarSesion = () => {
     let user = extraerUsuario()
     user.userOn = ""
     arrayUsuarios.splice(arrayUsuarios.indexOf(user), 1, user);
-    localStorage.setItem("regUser",JSON.stringify(arrayUsuarios))
+    localStorage.setItem("regUser", JSON.stringify(arrayUsuarios))
     window.location.replace("index.html")
 }
 
-function cantidadProductosCarrito(){
-if (existeUsuario()){
-    let user = extraerUsuario()
-    if (user.carrito.length > 0) {
-        cantidadCarrito.innerHTML = ""
-    cantidadCarrito.innerHTML = user.carrito.length
+function cantidadProductosCarrito() {
+    if (existeUsuario()) {
+        let user = extraerUsuario()
+        if (user.carrito.length > 0) {
+            cantidadCarrito.innerHTML = ""
+            cantidadCarrito.innerHTML = user.carrito.length
+        }
     }
-} 
 }
 cantidadProductosCarrito()
 
-function mostrarProductosCarrito(){
+function mostrarProductosCarrito() {
     let paraMostrarCarrito = extraerUsuario()
-    if (paraMostrarCarrito.carrito.length > 0){
+    if (paraMostrarCarrito.carrito.length > 0) {
         //cantidadProductosCarrito
         contenedor_card_carrito.innerHTML = ""
-    paraMostrarCarrito.carrito.forEach(producto => {
-        contenedor_card_carrito.innerHTML +=`<div class="card mb-3" style="max-width: 540px;">
+        paraMostrarCarrito.carrito.forEach(producto => {
+            contenedor_card_carrito.innerHTML += `<div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0 d-flex flex-row">
                 <div
                     class="col-md-4 d-flex justify-content-center d-md-flex justify-content-md-end">
@@ -124,21 +122,19 @@ function mostrarProductosCarrito(){
             </div>
         </div>
         `;
-    });
-    } else if (paraMostrarCarrito.carrito.length === 0 ){
+        });
+    } else if (paraMostrarCarrito.carrito.length === 0) {
         contenedor_card_carrito.innerHTML = `<h1>Carrito Vacio</h1>`
     } else {
 
     }
 }
 
-
-
 const imprimirEnLinea = () => {
     let usuarioLinea;
     if (existeUsuario()) {
         usuarioLinea = extraerUsuario();
-        if(usuarioLinea.admin === "true"){
+        if (usuarioLinea.admin === "true") {
             divEnLinea.innerHTML = `<li class="nav-item">
             <div class="dropdown">
                 <a class=" nav-link abrir-Carrito dropdown-toggle me-4" type="button" id="dropdownMenu2"

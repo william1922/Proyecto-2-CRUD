@@ -7,7 +7,7 @@ let sesionInit = false;
 
 //asociando eventos
 inputUser.addEventListener("blur", () => {
-    validarCampos(inputUser);
+  validarCampos(inputUser);
 });
 inputPass.addEventListener("blur", () => {
   validatePass(inputPass);
@@ -32,55 +32,53 @@ const obtenerUsuarioLogin = (usuario) => {
   return contenedorUsuario
 }
 
-
 // Obtengo los datos de los inputs para logear
 function login(e) {
   e.preventDefault();
   // Se confirma si el usuario esta registrado
-  if (confirmarUsuarioRegistrado(inputUser)){
+  if (confirmarUsuarioRegistrado(inputUser)) {
     // Guardo el objeto en una variable
     usuario = obtenerUsuarioLogin(inputUser)
     // Comparo que que la contraseña ingresada sea igual al atributo contraseña del objeto
-     if (usuario.contraseña === inputPass.value){
+    if (usuario.contraseña === inputPass.value) {
       // Cambio el atributo a "true" para posteriores usos en otras funsiones
       usuario.userOn = "true"
       // Remplazo el objeto obtenido con cambios en su atributo userOn con el antiguo objeto que esta sin modificar
-      regUser.splice(regUser.indexOf(usuario),1 , usuario)
+      regUser.splice(regUser.indexOf(usuario), 1, usuario)
       // Se envia el nuevo array con el usuario o admin logeado
-      localStorage.setItem("regUser",JSON.stringify(regUser))
-
+      localStorage.setItem("regUser", JSON.stringify(regUser))
       let timerInterval
-Swal.fire({
-  title: 'Cargando Datos.',
-  html: 'Quedan <b></b>.',
-  timer: 1500,
-  timerProgressBar: true,
-  didOpen: () => {
-    Swal.showLoading()
-    const b = Swal.getHtmlContainer().querySelector('b')
-    timerInterval = setInterval(() => {
-      b.textContent = Swal.getTimerLeft()
-    }, 100)
-  },
-  willClose: () => {
-    clearInterval(timerInterval)
-  }
-}).then((result) => {
-  /* Read more about handling dismissals below */
-  if (result.dismiss === Swal.DismissReason.timer) {
-    window.location.replace("index.html");
-  }
-})
-    // En caso de que no sean iguales las contraseñas se le informa
-     } else {
+      Swal.fire({
+        title: 'Cargando Datos.',
+        html: 'Quedan <b></b>.',
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+          const b = Swal.getHtmlContainer().querySelector('b')
+          timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft()
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          window.location.replace("index.html");
+        }
+      })
+      // En caso de que no sean iguales las contraseñas se le informa
+    } else {
       Swal.fire({
         icon: 'error',
         title: '',
         text: 'Contraseña incorrecta',
         footer: '<a class="text-decoration-none" href="/404.html">Recuperar Contraseña</a>'
       })
-     }
-     // De no encontrarse en el array de usuarios se le informara que no esta registrado
+    }
+    // De no encontrarse en el array de usuarios se le informara que no esta registrado
   } else {
     Swal.fire({
       icon: 'error',
@@ -93,16 +91,17 @@ Swal.fire({
 
 //validaciones
 
-    function validarCampos(input) {
-        if (input.value.trim().length > 0) {
-          input.className = "form-control is-valid";
-          return true;
-        } else {        {
-            input.className = "form-control is-invalid";
-            return false;
-          }
-        }
+function validarCampos(input) {
+  if (input.value.trim().length > 0) {
+    input.className = "form-control is-valid";
+    return true;
+  } else {
+    {
+      input.className = "form-control is-invalid";
+      return false;
     }
+  }
+}
 
 function validatePass(input) {
   let regPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;

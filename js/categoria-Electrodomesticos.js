@@ -13,7 +13,7 @@ const obtenerProductoAEnviar = (codigo) => {
 const enviarProductoDetalles = (codigo) => {
     let productAEnviar = obtenerProductoAEnviar(codigo)
     productosDetalles.push(productAEnviar)
-    localStorage.setItem("productosdetalles",JSON.stringify(productosDetalles))
+    localStorage.setItem("productosdetalles", JSON.stringify(productosDetalles))
     window.location.replace("detalleProducto.html")
 }
 
