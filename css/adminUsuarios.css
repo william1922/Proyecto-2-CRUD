@@ -1,0 +1,44 @@
+@media screen and (min-width: 768px){
+    .contenedor-detabla-boos{
+        width: 65% !important;
+    }
+    .contenedor-de-tabla-ytexto{
+        width: 80% !important;
+    }
+}
+
+.contenedor-de-tabla-ytexto{
+    background-color: rgb(247, 246, 244);
+}
+
+.agregar-borde{
+    border-bottom: 2px solid !important;
+}
+.agregar-hover-tacho:hover {
+    cursor: pointer;
+}
+
+.agregar-hover-tacho:hover i{
+    color: red;
+}
+
+.contenedor-detabla-boos{
+    width: 95%;
+}
+
+.tabla-de-usuarios{
+    background-color: #E9967A;
+}
+
+.tabla-cuerpo{
+    background-image: linear-gradient(120deg, #f6d465c4 0%, #fd9f856c 100%);
+}
+
+.contenedor-de-tabla-ytexto div p{
+     color: #2c2a2a;
+}
+
+
+.tabla-a-bordear{
+    color: #5f5a5a;
+}

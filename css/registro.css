@@ -1,0 +1,12 @@
+
+
+
+    body {
+        background-color: #eeeef0
+    }
+    .imagen{
+        background-image: url(/img/img_registro.jpg);
+        background-position: center center no-repeat;
+        background-size:cover;
+
+    }

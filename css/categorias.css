@@ -1,7 +1,5 @@
 
 
-/* Pgina principal */
-
 div.card img.carrito{
     width: 1.3rem;
 }
@@ -10,9 +8,6 @@ a.link-carrito:hover{
     background-color: darkgray;
 }
 
-main{
-    background-color: #eeeef0;
-}
 
 
 
@@ -20,12 +15,12 @@ main{
 
 @media  (min-width: 992px )  {
     main div.columna-1 {
-        border:1px solid rgb(192, 187, 187);
+        border:1px solid rgb(153, 153, 153);
     }
     div.columna-1{
         height: 22rem;
         width: 15rem;
-        margin-top: 7rem;
+        margin-top: 3rem;
     }
 
     div.columna-1 select{
@@ -37,8 +32,16 @@ main{
     }
     main div.card {
         width: 250px;
+
         
     }
+
+    .columna-1{
+        position: sticky;
+        top: 22%;
+    }
+    
+
 
     main div.card a.btn{
         width: 100%;
@@ -53,10 +56,4 @@ main{
      div.card img.imagen-producto{
         height: 9rem;
     } 
-
-    .columna-1{
-        position: sticky;
-        top: 22%;
-    }
 }
-

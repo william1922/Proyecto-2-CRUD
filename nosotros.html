@@ -5,16 +5,263 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- FAVICON -->
-    <link rel="stylesheet" href="img/icono-tienda.png">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <!-- CSS DE BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="">
-    <title>Document</title>
+    <!-- MI CSS -->
+    <link rel="stylesheet" href="css/nosotros.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <title>Nosotros</title>
 </head>
 <body>
-    
-
+    <!-- HEADER -->
+    <header class="sticky-top">
+      <nav class="navbar nav-bar-1 bg-dark navbar-expand-lg ">
+          <div class="container-fluid pe-lg-5">
+              <div class="d-flex flex-column align-items-center">
+                  <a class="navbar-brand fw-bold m-0" href="./index.html">Rolling Store</a>
+              </div>
+              <button class="navbar-toggler  navbar-light border border-dark " type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon text-black"></span>
+              </button>
+              <div class="nav-1-opciones collapse navbar-collapse d-lg-flex justify-content-lg-end "
+                  id="navbarSupportedContent">
+                  <ul class="navbar-nav  mb-2 mb-lg-0 ">
+                      <li class="nav-item d-lg-none">
+                          <a class="nav-link active  fw-bold" aria-current="page" href="./index.html">Inicio</a>
+                      </li>
+                      <li class="nav-item dropdown d-lg-none">
+                          <a class="nav-link dropdown-toggle text-black fw-bold" href="#" id="navbarDropdown"
+                              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Categorias
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item " href="/computacion.html">Computacíon</a></li>
+                              <li><a class="dropdown-item" href="/electrodomesticos.html">Electrodomésticos</a></li>
+                              <li><a class="dropdown-item" href="/aireLibre.html">Aire Libre</a></li>
+                          </ul>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link  fw-bold" href="/nosotros.html">Nosotros</a>
+                      </li>
+                      <div id="contenedorDeLogin"
+                          class="d-lg-flex flex-lg-row ms-lg-5 border border-dark rounded bg-dark bg-opacity-10">
+                          <!-- Button trigger modal -->
+                                  <button type="button" onclick="verCarrito()" id="abrirCarrito" class="btn position-relative abrir-Carrito">
+                                      <img src="./img/index/navbar/cart2.svg"
+                                  alt="icono-carrito" style="width:1.6rem">
+                                      <span id="cantidadCarrito" class="position-absolute top-0 rounded-circle start-100 translate-middle w-50 h6 text-white bg-danger">
+                                        <span class="visually-hidden">unread messages</span>
+                                      </span>
+                                    </button> 
+                      </div>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+      <!---------------->
+      <div class="contenedor-modal d-flex justify-content-center align-items-center">
+          <div class="overflow-auto vh-100 modalMostrar">
+              <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="staticBackdropLabel">Mi Carrito</h5>
+                          <button onclick="cerrarCarrito()" type="button" class="btn-close"
+                              aria-label="Close"></button>
+                      </div>
+                      <div id="body-modal" class="modal-body overflow-auto">
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" onclick="cerrarCarrito()"
+                              class="btn btnCerrar btn-danger">Cerrar</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Segundo nav -->
+      <nav class="navbar navbar-light bg-primary">
+          <div class="container-fluid justify-content-center justify-content-lg-evenly">
+              <div
+                  class="d-none opciones-categorias d-lg-inline d-flex justify-content-center align-items-center me-lg-5 ">
+                  <a class="navbar-brand  p-0 " href="./index.html">
+                      <img class="mb-2" src="./img/index/navbar/home.svg" alt="icono-inicio" width="30" height="24">
+                  </a>
+                  <a class="navbar-brand" href="/computacion.html">Computación</a>
+                  <a class="navbar-brand" href="/electrodomesticos.html">Electrodomésticos</a>
+                  <a class="navbar-brand" href="/aireLibre.html">Aire Libre</a>
+              </div>
+              <form class="d-flex align-items-center me-lg-5">
+                  <input class="busqueda-nav form-control me-2 " type="search" placeholder="&#128269 Búsqueda"
+                      aria-label=" Busqueda">
+              </form>
+          </div>
+      </nav>
+      <!----------------->
+      <!-- Fin del nav-bar -->
+  </header>
+    <main>
+        <section class="container my-5">
+            <div class="text-center">
+              <h1 class="text-capitalize">
+                rolling store
+              </h1>
+              <p class="font-weight-bold mb-5">
+                Somos una empresa emergente, comprometida en cumplir y sobrepasar las expectativas y necesidades de nuestros clientes actuales y futuros. Nuestra misión es ofrecer una gran variedad de productos y servicios con la mejor calidad a un precio accesible para todos. Nuestra visión es seguir creciendo como empresa aplicando la mejora continua, con el fin de ofrecer mejor calidad de productos y servicios.
+              </p>
+            </div>
+            <div class="row text-center">
+                <!-- CARD 1 -->
+                <div class="col-sm col-md-6">
+                  <div class="card mb-3 mx-auto shadow-lg" style="width: fit-content;">
+                    <img class="card-img-top rounded-circle border img-card my-2 mx-auto" src="img/nosotros/avatars/ant_man_icon_by_thelivingethan_dcipp2j-pre.jpg"
+                      alt="Card image cap">
+                    <div class="card-body py-0">
+                      <h5 class="card-title">Ruiz Jose</h5>
+                    </div>
+                    <div class="card-body">
+                      <a class="mx-2 text-decoration-none" href="https://www.facebook.com/" target="_blank">
+                        <img class="social-logo" src="img/nosotros/social-icons/facebook-icon.webp" alt="facebook-logo">
+                      </a>
+                      <a class="mx-2 text-decoration-none" href="https://www.instagram.com/" target="_blank">
+                        <img class="social-logo" src="img/nosotros/social-icons/instagram-icon.webp" alt="instagram-logo">
+                      </a>
+                      <a class="mx-2 text-decoration-none" href="https://www.linkedin.com/" target="_blank">
+                        <img class="social-logo" src="img/nosotros/social-icons/linkedin-icon.webp" alt="linkedIn-logo">
+                      </a>
+                      <a class="mx-2 text-decoration-none" href="https://github.com/" target="_blank">
+                        <img class="social-logo" src="img/nosotros/social-icons/github-icon.webp" alt="github-logo">
+                      </a>
+                      <a class="mx-2 text-decoration-none" href="https://twitter.com/" target="_blank">
+                        <img class="social-logo" src="img/nosotros/social-icons/twitter-icon.webp" alt="twitter-logo">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- CARD 2 -->
+                <div class="col-sm col-md-6">
+                    <div class="card mb-3 mx-auto shadow-lg" style="width: fit-content;">
+                      <img class="card-img-top rounded-circle border img-card my-2 mx-auto" src="/img/nosotros/avatars/fede-avatar.png"
+                        alt="Card image cap">
+                      <div class="card-body py-0">
+                        <h5 class="card-title">Valdiglesias Federico</h5>
+                      </div>
+                      <div class="card-body">
+                        <a class="mx-2 text-decoration-none" href="https://www.facebook.com/fedee.cjs.336/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/facebook-icon.webp" alt="facebook-logo">
+                        </a>
+                        <a class="mx-2 text-decoration-none" href="https://www.instagram.com/fedeee.cjs/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/instagram-icon.webp" alt="instagram-logo">
+                        </a>
+                        <a class="mx-2 text-decoration-none" href="https://www.linkedin.com/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/linkedin-icon.webp" alt="linkedIn-logo">
+                        </a>
+                        <a class="mx-2 text-decoration-none" href="https://github.com/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/github-icon.webp" alt="github-logo">
+                        </a>
+                        <a class="mx-2 text-decoration-none" href="https://twitter.com/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/twitter-icon.webp" alt="twitter-logo">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- CARD 3 -->
+                <div class="col-sm col-md-6">
+                    <div class="card mb-3 mx-auto shadow-lg" style="width: fit-content;">
+                      <img class="card-img-top rounded-circle border img-card my-2 mx-auto" src="img/nosotros/avatars/king_thor_icon_by_thelivingethan_dc7ovrv-pre.jpg"
+                        alt="Card image cap">
+                      <div class="card-body py-0">
+                        <h5 class="card-title">Pizarro Medina William</h5>
+                      </div>
+                      <div class="card-body">
+                        <a class="mx-2 text-decoration-none" href="https://www.facebook.com/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/facebook-icon.webp" alt="facebook-logo">
+                        </a>
+                        <a class="mx-2 text-decoration-none" href="https://www.instagram.com/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/instagram-icon.webp" alt="instagram-logo">
+                        </a>
+                        <a class="mx-2 text-decoration-none" href="https://www.linkedin.com/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/linkedin-icon.webp" alt="linkedIn-logo">
+                        </a>
+                        <a class="mx-2 text-decoration-none" href="https://github.com/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/github-icon.webp" alt="github-logo">
+                        </a>
+                        <a class="mx-2 text-decoration-none" href="https://twitter.com/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/twitter-icon.webp" alt="twitter-logo">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- CARD 4 -->
+                <div class="col-sm col-md-6">
+                    <div class="card mb-3 mx-auto shadow-lg" style="width: fit-content;">
+                      <img class="card-img-top rounded-circle border img-card my-2 mx-auto" src="/img/nosotros/avatars/doctor_strange_icon_by_thelivingethan_dcax023-pre.jpg"
+                        alt="Card image cap">
+                      <div class="card-body py-0">
+                        <h5 class="card-title">Carrizo Gabriel</h5>
+                      </div>
+                      <div class="card-body">
+                        <a class="mx-2 text-decoration-none" href="https://www.facebook.com/1gabrielcarrizo/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/facebook-icon.webp" alt="facebook-logo">
+                        </a>
+                        <a class="mx-2 text-decoration-none" href="https://www.instagram.com/1gabrielcarrizo/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/instagram-icon.webp" alt="instagram-logo">
+                        </a>
+                        <a class="mx-2 text-decoration-none" href="https://www.linkedin.com/in/gabriel-carrizo-09059b223/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/linkedin-icon.webp" alt="linkedIn-logo">
+                        </a>
+                        <a class="mx-2 text-decoration-none" href="https://github.com/1gabrielcarrizo" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/github-icon.webp" alt="github-logo">
+                        </a>
+                        <a class="mx-2 text-decoration-none" href="https://twitter.com/" target="_blank">
+                          <img class="social-logo" src="img/nosotros/social-icons/twitter-icon.webp" alt="twitter-logo">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+      <div class="">
+          <div class="informacion-footer container-fluid  d-lg-flex p-0 ">
+              <div class="marca-footer  w-100 p-4 d-flex flex-column justify-content-center align-items-center d-lg-flex flex-column  justify-content-lg-center align-items-lg-center border-bottom border-dark p-lg-0">
+                  <h4 class="text-center fw-bold mt-2">Rolling Store</h4>
+              </div>
+              <div class="contacto-footer  d-flex flex-column justify-content-center align-items-center  w-100 p-3 border-bottom border-dark ">
+                  <h4 class="text-center fw-bold ">Contacto</h4>
+                  <div class="contacto-footer-informacion mt-2">
+                      <p class="fw-bold ps-1"><img class="mb-1 fw-bold ps-1" src="./img/index/footer/contacto/map.svg"
+                              alt="icono-map"> San Miguel de tucuman</p>
+                      <p class="fw-bold ps-1"> <img class="mb-1" src="./img/index/footer/contacto/whatsapp.svg"
+                              alt="icono-wsp"> 381346789</p>
+                      <p class="fw-bold ps-1"> <img class="mb-1" src="./img/index/footer/contacto/e-mail.svg"
+                              alt="icono-mail"> Rolling_Store@gmail.com</p>
+                  </div>
+              </div>
+              <div class="redes-footer d-flex flex-column justify-content-center align-items-center d-md-flex flex-md-column justify-content-md-center align-items-md-center d-lg-flex justify-content-lg-center  w-100 py-3 px-lg-4 ">
+                  <h4 class="text-center ">Seguinos en nuestras redes</h4>
+                  <div class="icono-redes  w-75  d-flex justify-content-around d-md-flex justify-content-md-evenly m-0 mt-3 mt-lg-3 px-md-4">
+                      <a href="https://www.facebook.com/" target="_blank"><img
+                              src="./img/index/footer/redes/facebook.png" alt="icono-facebook"></a>
+                      <a href="https://www.instagram.com/" target="_blank"><img
+                              src="./img/index/footer/redes/instagram.png" alt="icono-instagram"></a>
+                      <a href="https://twitter.com/account/access" target="_blank"><img
+                              src="./img/index/footer/redes/gorjeo.png" alt="icono-twitter"></a>
+                  </div>
+              </div>
+          </div>
+          <div class="derechos-footer  text-white-50 p-2 d-flex justify-content-center align-items-center ">
+              <p class="m-0 text-white fw-bold"> Proyecto 2 - Rolling Store &copy 2022</p>
+          </div>
+      </div>
+  </footer>
     <!-- SCRIPT DE BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="/js/imprimir-cerrarSesion.js"></script>
 </body>
 </html>
