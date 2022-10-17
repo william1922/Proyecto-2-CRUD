@@ -15,9 +15,7 @@
 </head>
 <body>
     <header class="sticky-top">
-        <!-- Inicio del nav-bar -->
-        <!-- Primer NAV -->
-        <nav class="navbar nav-bar-1  bg-dark navbar-expand-lg ">
+        <nav class="navbar nav-bar-1 bg-dark navbar-expand-lg ">
             <div class="container-fluid pe-lg-5">
                 <div class="d-flex flex-column align-items-center">
                     <a class="navbar-brand fw-bold m-0" href="./index.html">Rolling Store</a>
@@ -47,54 +45,52 @@
                         <li class="nav-item">
                             <a class="nav-link  fw-bold" href="/nosotros.html">Nosotros</a>
                         </li>
-                        <div id="contenedorDeLogin" class="d-lg-flex flex-lg-row ms-lg-5 border border-dark rounded bg-dark bg-opacity-10">
+                        <div id="contenedorDeLogin"
+                            class="d-lg-flex flex-lg-row ms-lg-5 border border-dark rounded bg-dark bg-opacity-10">
                             <!-- Button trigger modal -->
-                            <a type="button" class="d-flex align-self-center m-0 text-decoration-none" href=""
-                                data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                    <button type="button" class="btn position-relative">
+                                    <button type="button" onclick="verCarrito()" id="abrirCarrito" class="btn position-relative abrir-Carrito">
                                         <img src="./img/index/navbar/cart2.svg"
                                     alt="icono-carrito" style="width:1.6rem">
                                         <span id="cantidadCarrito" class="position-absolute top-0 rounded-circle start-100 translate-middle w-50 h6 text-white bg-danger">
                                           <span class="visually-hidden">unread messages</span>
                                         </span>
                                       </button>
-                                
-                            </a>
-                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-scrollable">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="staticBackdropLabel">Mi Carrito</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div id="body-modal" class="modal-body overflow-auto">
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger"
-                                                data-bs-dismiss="modal">Cerrar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </ul>
                 </div>
             </div>
         </nav>
         <!---------------->
+        <div class="contenedor-modal d-flex justify-content-center align-items-center">
+            <div class="overflow-auto vh-100 modalMostrar">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Mi Carrito</h5>
+                            <button onclick="cerrarCarrito()" type="button" class="btn-close"
+                                aria-label="Close"></button>
+                        </div>
+                        <div id="body-modal" class="modal-body overflow-auto">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" onclick="cerrarCarrito()"
+                                class="btn btnCerrar btn-danger">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Segundo nav -->
         <nav class="navbar navbar-light bg-primary">
             <div class="container-fluid justify-content-center justify-content-lg-evenly">
-                <div class=" d-none opciones-categorias d-lg-inline d-flex justify-content-center align-items-center me-lg-5 ">
+                <div
+                    class="d-none opciones-categorias d-lg-inline d-flex justify-content-center align-items-center me-lg-5 ">
                     <a class="navbar-brand  p-0 " href="./index.html">
                         <img class="mb-2" src="./img/index/navbar/home.svg" alt="icono-inicio" width="30" height="24">
                     </a>
-                    <a class="navbar-brand link-categorias" href="/computacion.html">Computación</a>
-                    <a class="navbar-brand link-categorias" href="/electrodomesticos.html">Electrodomésticos</a>
-                    <a class="navbar-brand link-categorias" href="/aireLibre.html">Aire Libre</a>
+                    <a class="navbar-brand" href="/computacion.html">Computación</a>
+                    <a class="navbar-brand" href="/electrodomesticos.html">Electrodomésticos</a>
+                    <a class="navbar-brand bg-light bg-opacity-75" href="/aireLibre.html">Aire Libre</a>
                 </div>
                 <form class="d-flex align-items-center me-lg-5">
                     <input class="busqueda-nav form-control me-2 " type="search" placeholder="&#128269 Búsqueda"

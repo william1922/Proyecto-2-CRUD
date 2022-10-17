@@ -1,3 +1,4 @@
+
 /* Selecciono los elementos que se modificaran */
 const imagenProducto = document.querySelector('#imagen-de-producto');
 const marcaDeProducto = document.querySelector('#marca-de-producto');
@@ -27,7 +28,6 @@ const imprimirDetalles = (detalles) => {
 
 // Obtengo y lo guardo en una variable y muestro los atributos en el html
 const mostrarProductoDetalles = () => {
-    
     const detallesDeProducto = arrayProductoDetalle[arrayProductoDetalle.length-1]
     imprimirDetalles(detallesDeProducto)
     return detallesDeProducto
@@ -41,16 +41,25 @@ const existeUsuarioCarrito = () => {
     const existe = usuariostotal.some(element => {
         return element.userOn === "true"
     })
-    console.log(existe)
    return existe
 }
 
-const obtenerUsuario = () => {
+const obtenerUsuarioCarrito = () => {
     const contenedorUsuarioCarrito = arrayUsuarios.find(element => {
         return element.userOn === "true"
     })
     return contenedorUsuarioCarrito
 }
+function cantidadProductosCarritoDetalle(){
+    if (existeUsuarioCarrito()){
+        let numeroCarrito = extraerUsuario()
+        if (numeroCarrito.carrito.length > 0) {
+            cantidadCarrito.innerHTML = ""
+        cantidadCarrito.innerHTML = numeroCarrito.carrito.length
+        }
+    } 
+    }
+    //cantidadProductosCarritoDetalle()
 
 //const stilo = () => {
 //    btnCarrito.toggleAttribute("disabled")
@@ -58,11 +67,12 @@ const obtenerUsuario = () => {
 btnCarrito.addEventListener("click", () => {
     let product, user
     if (existeUsuarioCarrito()){
-        user = obtenerUsuario();
+        user = obtenerUsuarioCarrito();
         product = arrayProductoDetalle[arrayProductoDetalle.length-1];
         user.carrito.push(product);
         arrayUsuarios.splice(arrayUsuarios.indexOf(user), 1, user);
         localStorage.setItem("regUser",JSON.stringify(arrayUsuarios))
+        cantidadProductosCarritoDetalle()
         //btnCarrito.toggleAttribute("disabled")
         //btnCarrito.classList.toggle("boton-de-carritodisable")
         //setTimeout(stilo, 2000)

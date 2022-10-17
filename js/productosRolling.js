@@ -1,4 +1,124 @@
-let arrayProductos = [
+let arrayUsuariosLocal = [
+    {
+        usuario:"admin",
+        contraseña:"admin1234",
+        email:"julian@gmail.com",
+        userOn:"",
+        carrito:[],
+        fecha:"May 25 2022 16:10:45",
+        admin:"true"
+    },
+    {
+        usuario:"william",
+        contraseña:"Qazmlp123",
+        email:"willy14@gmail.com",
+        userOn:"",
+        carrito:[],
+        fecha:"Oct 13 2022 13:32:02",
+        admin:""
+    },
+    {
+        usuario:"fede",
+        contraseña:"Qazmlp123",
+        email:"fede@gmail.com",
+        userOn:"",
+        carrito:[],
+        fecha:"Oct 1 2022 17:24:09",
+        admin:""
+    },
+    {
+        usuario:"gabriel",
+        contraseña:"Qazmlp123",
+        email:"gabriel@gmail.com",
+        userOn:"",
+        carrito:[],
+        fecha:"Sep 25 2022 20:12:12",
+        admin:""
+    },
+    {
+        usuario:"jose",
+        contraseña:"Qazmlp123",
+        email:"jose@gmail.com",
+        userOn:"",
+        carrito:[],
+        fecha:"Sep 14 2022 18:24:54",
+        admin:""
+    },
+    {
+        usuario:"julian",
+        contraseña:"Qazmlp123",
+        email:"julian@gmail.com",
+        userOn:"",
+        carrito:[],
+        fecha:"May 25 2022 16:10:45",
+        admin:""
+    },
+    {
+        usuario:"miriam",
+        contraseña:"Qazmlp123",
+        email:"miriam@gmail.com",
+        userOn:"",
+        carrito:[],
+        fecha:"Jan 14 2022 09:14:21",
+        admin:""
+    },
+    {
+        usuario:"marcela",
+        contraseña:"Qazmlp123",
+        email:"marcela@gmail.com",
+        userOn:"",
+        carrito:[],
+        fecha:"sep 15 2022 18:01:54",
+        admin:""
+    },
+    {
+        usuario:"jorge",
+        contraseña:"Qazmlp123",
+        email:"jorge@gmail.com",
+        userOn:"",
+        carrito:[],
+        fecha:"Feb 14 2022 11:14:54",
+        admin:""
+    },
+    {
+        usuario:"daiana",
+        contraseña:"Qazmlp123",
+        email:"daiana@gmail.com",
+        userOn:"",
+        carrito:[],
+        fecha:"Nov 14 2021 09:14:14",
+        admin:""
+    },
+    {
+        usuario:"caro",
+        contraseña:"Qazmlp123",
+        email:"caro@gmail.com",
+        userOn:"",
+        carrito:[],
+        fecha:"Jul 11 2021 14:09:45",
+        admin:""
+    },
+    {
+        usuario:"julia",
+        contraseña:"Qazmlp123",
+        email:"julia@gmail.com",
+        userOn:"",
+        carrito:[],
+        fecha:"Jun 05 2022 11:10:44",
+        admin:""
+    },
+    {
+        usuario:"sofia",
+        contraseña:"Qazmlp123",
+        email:"sofia@gmail.com",
+        userOn:"",
+        carrito:[],
+        fecha:"Oct 09 2022 19:01:45",
+        admin:""
+    }
+]
+
+let arrayProductosHard = [
     {
         cantidad: "300",
         categoria: "computacion",
@@ -248,7 +368,125 @@ let arrayProductos = [
         nombre: "Pileta estructural rectangular",
         precio: "37.105",
         url: "https://http2.mlstatic.com/D_NQ_NP_980240-MLA40165269048_122019-O.webp"
+    },
+    {
+        cantidad: "69",
+        categoria: "computacion",
+        codigo: "1324658757655",
+        descripcion: "Ideal para varias actividades. Te brindará un sonido de calidad y conseguirás la nitidez de las voces",
+        marca: "Trust Gaming",
+        nombre: "Micrófono GXT 212 Mico USB 23791",
+        precio: "5.249",
+        url: "https://http2.mlstatic.com/D_NQ_NP_851788-MLA45455236240_042021-O.webp"
+    },
+    {
+        cantidad: "1.571",
+        categoria: "computacion",
+        codigo: "1324655721655",
+        descripcion: "Los auriculares para gaming GXT 450 Blizz Surround Sound ofrecen sonidos de gaming en alta fidelidad y unos potentes graves",
+        marca: "Trust Gaming",
+        nombre: "Trust Gxt 450 Auriculares Gamer",
+        precio: "9.979",
+        url: "https://http2.mlstatic.com/D_NQ_NP_665254-MLA50890793340_072022-O.webp"
+    },
+    {
+        cantidad: "594",
+        categoria: "computacion",
+        codigo: "1316658721655",
+        descripcion: "Control del volumen y de los bajos en la parte frontal del altavoz",
+        marca: "Trust Gaming",
+        nombre: "Parlantes Gxt 608",
+        precio: "13.195",
+        url: "https://http2.mlstatic.com/D_NQ_NP_951637-MLA31116087012_062019-O.webp"
+    },
+    {
+        cantidad: "151",
+        categoria: "computacion",
+        codigo: "1328658721655",
+        descripcion: "El diseño contemporáneo de esta laptop le da un aspecto y sensación de primera calidad, con un cuerpo delgado que se adapta a tus viajes cuando estás fuera de la oficina",
+        marca: "Lenovo",
+        nombre: "Notebook Lenovo V-series V15 G1 Iml Iron Gray",
+        precio: "177.180",
+        url: "https://http2.mlstatic.com/D_NQ_NP_714842-MLA51838842275_102022-O.webp"
+    },
+    {
+        cantidad: "971",
+        categoria: "computacion",
+        codigo: "1323758721655",
+        descripcion: "Esta tablet es ideal para cada una de tus actividades: editar fotos, documentos, navegar por internet y ¡mucho más!",
+        marca: "Lenovo",
+        nombre: "Tablet Lenovo Yoga Tab",
+        precio: "200",
+        url: "https://http2.mlstatic.com/D_NQ_NP_898122-MLA48244069278_112021-O.webp"
+    },
+    {
+        cantidad: "258",
+        categoria: "electrodomesticos",
+        codigo: "1112726752364",
+        descripcion: "La ventaja principal de calefaccionar con un convector, es que consigue elevar la temperatura del ambiente sin humedecer el aire",
+        marca: "Peabody",
+        nombre: "Calefactor eléctrico Peabody",
+        precio: "14.700",
+        url: "https://http2.mlstatic.com/D_NQ_NP_602706-MLA31485281872_072019-O.webp"
+    },
+    {
+        cantidad: "830",
+        categoria: "aireLibre",
+        codigo: "1331452387114",
+        descripcion: "Diseño de procesamiento único, con un aspecto extraordinario como un bolígrafo",
+        marca: "Generic",
+        nombre: "Linterna Tactica Mini Led",
+        precio: "1.045",
+        url: "https://http2.mlstatic.com/D_NQ_NP_635235-MLA48234389676_112021-O.webp"
+    },
+    {
+        cantidad: "1.270",
+        categoria: "aireLibre",
+        codigo: "1982452157114",
+        descripcion: "Una carpa tipo iglu que se arma en segundos",
+        marca: "Generic",
+        nombre: "Carpa Automatica Playa Camping Reforzada",
+        precio: "1.045",
+        url: "https://http2.mlstatic.com/D_NQ_NP_644410-MLA48352522996_112021-O.webp"
+    },
+    {
+        cantidad: "743",
+        categoria: "aireLibre",
+        codigo: "1331499157114",
+        descripcion: "Si te gusta estar en los detalles o tenés un espacio verde pequeño, la bordeadora Philco te va a ayudar en aquellas zonas donde no puede alcanzar un cortacésped",
+        marca: "Philco",
+        nombre: "Bordeadora Philco MJPBO116",
+        precio: "7.840",
+        url: "https://http2.mlstatic.com/D_NQ_NP_930663-MLA42996177939_082020-O.webp"
+    },
+    {
+        cantidad: "8",
+        categoria: "aireLibre",
+        codigo: "1331457736114",
+        descripcion: "La bomba Vulcano BAE 100 te garantizará que tu pileta cumpla con las condiciones de higiene adecuadas",
+        marca: "Vulcano",
+        nombre: "Bomba para pileta Vulcano",
+        precio: "41.510",
+        url: "https://http2.mlstatic.com/D_NQ_NP_721020-MLA48108349358_112021-O.webp"
+    },
+    {
+        cantidad: "800",
+        categoria: "aireLibre",
+        codigo: "1331452164894",
+        descripcion: "Mantener los espacios verdes de tu hogar ahora es más fácil, olvidate de cortes desprolijos y malezas",
+        marca: "Omaha",
+        nombre: "Desmalezadora Omaha DN52",
+        precio: "20.499",
+        url: "https://http2.mlstatic.com/D_NQ_NP_868018-MLA51155817879_082022-O.webp"
     }
 ]
 
-localStorage.setItem("productos",JSON.stringify(arrayProductos))
+let productosAEnviar = JSON.parse(localStorage.getItem('productos')) || []
+let usuariosAEnviar = JSON.parse(localStorage.getItem('regUser')) || []
+if (productosAEnviar.length <= 0){
+    localStorage.setItem("productos",JSON.stringify(arrayProductosHard))
+}
+if (usuariosAEnviar.length <= 0) {
+    localStorage.setItem("regUser",JSON.stringify(arrayUsuariosLocal))
+}
+

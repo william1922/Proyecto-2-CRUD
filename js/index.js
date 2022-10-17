@@ -64,7 +64,7 @@ function cargarProducto() {
                             <a class="btn-carrito btn btn-light btn-sm mt-2 col-8 col-lg" href="#"
                                 role="button"><img class="carrito"
                                 src="./img/index/pagina-principal/card/cart3.svg" alt=""></a>
-                            <a class="btn-comprar btn btn-primary btn-sm mt-2 mx-3 col-8 col-lg " href="#"
+                            <a class="btn-comprar btn btn-primary btn-sm mt-2 mx-3 col-8 col-lg " href="/404.html"
                                 role="button">Comprar</a>
                         </div>
                     </div>
@@ -90,10 +90,10 @@ function cargarProducto() {
                             <p class="m-0"><small>Categoria: ${p.categoria}</small></p>
                             <h5 class="card-text fw-bold m-0 text-center mt-2 ">$ ${p.precio}</h5>
                             <div class=" d-flex flex-column w-100 justify-content-center align-items-center d-lg-flex flex-lg-row-reverse  mt-1 ">
-                            <a class="btn-carrito btn btn-light btn-sm mt-2 col-8 col-lg" href="#"
+                            <a class="btn-carrito btn btn-light btn-sm mt-2 col-8 col-lg" onclick="agregarAlCarrito('${p.codigo}')"
                                 role="button"><img class="carrito"
                                 src="./img/index/pagina-principal/card/cart3.svg" alt=""></a>
-                            <a class="btn-comprar btn btn-primary btn-sm mt-2 mx-3 col-8 col-lg" href="#"
+                            <a class="btn-comprar btn btn-primary btn-sm mt-2 mx-3 col-8 col-lg" href="/404.html"
                                 role="button">Comprar</a>
                         </div>
                         </div>
@@ -123,10 +123,10 @@ function cargarProducto() {
                         <p class="m-0"><small>Categoria: ${producto.categoria}</small></p>
                         <h5 class="card-text fw-bold m-0 text-center mt-2 ">$ ${producto.precio}</h5>
                         <div class=" d-flex flex-column w-100 justify-content-center align-items-center d-lg-flex flex-lg-row-reverse  mt-1 ">
-                        <a class="btn-carrito btn btn-light btn-sm mt-2 col-8 col-lg" href="#"
+                        <a class="btn-carrito btn btn-light btn-sm mt-2 col-8 col-lg" onclick="agregarAlCarrito('${producto.codigo}')"
                             role="button"><img class="carrito"
                             src="./img/index/pagina-principal/card/cart3.svg" alt=""></a>
-                        <a class="btn-comprar btn btn-primary btn-sm mt-2 mx-3 col-8 col-lg" href="#"
+                        <a class="btn-comprar btn btn-primary btn-sm mt-2 mx-3 col-8 col-lg" href="/404.html"
                             role="button">Comprar</a>
                     </div>
                     </div>
@@ -152,10 +152,10 @@ function cargarProducto() {
                         <p class="m-0"><small>Categoria: ${producto.categoria}</small></p>
                         <h5 class="card-text fw-bold m-0 text-center mt-2 ">$ ${producto.precio}</h5>
                         <div class=" d-flex flex-column w-100 justify-content-center align-items-center d-lg-flex flex-lg-row-reverse  mt-1 ">
-                        <a class="btn-carrito btn btn-light btn-sm mt-2 col-8 col-lg" href="#"
+                        <a class="btn-carrito btn btn-light btn-sm mt-2 col-8 col-lg" onclick="agregarAlCarrito('${producto.codigo}')"
                             role="button"><img class="carrito"
                             src="./img/index/pagina-principal/card/cart3.svg" alt=""></a>
-                        <a class="btn-comprar btn btn-primary btn-sm mt-2 mx-3 col-8 col-lg" href="#"
+                        <a class="btn-comprar btn btn-primary btn-sm mt-2 mx-3 col-8 col-lg" href="/404.html"
                             role="button">Comprar</a>
                     </div>
                     </div>
@@ -188,10 +188,10 @@ function cargarProducto() {
                             <p class="m-0"><small>Categoria: ${producto.categoria}</small></p>
                             <h5 class="card-text fw-bold m-0 text-center mt-2 ">$ ${producto.precio}</h5>
                             <div class=" d-flex flex-column w-100 justify-content-center align-items-center d-lg-flex flex-lg-row-reverse  mt-1 ">
-                            <a class="btn-carrito btn btn-light btn-sm mt-2 col-8 col-lg" href="#"
+                            <a class="btn-carrito btn btn-light btn-sm mt-2 col-8 col-lg" onclick="agregarAlCarrito('${producto.codigo}')"
                                 role="button"><img class="carrito"
                                 src="./img/index/pagina-principal/card/cart3.svg" alt=""></a>
-                            <a class="btn-comprar btn btn-primary btn-sm mt-2 mx-3 col-8 col-lg" href="#"
+                            <a class="btn-comprar btn btn-primary btn-sm mt-2 mx-3 col-8 col-lg" href="/404.html"
                                 role="button">Comprar</a>
                         </div>
                         </div>
@@ -217,10 +217,10 @@ function cargarProducto() {
                             <p class="m-0"><small>Categoria: ${producto.categoria}</small></p>
                             <h5 class="card-text fw-bold m-0 text-center mt-2 ">$ ${producto.precio}</h5>
                             <div class=" d-flex flex-column w-100 justify-content-center align-items-center d-lg-flex flex-lg-row-reverse  mt-1 ">
-                            <a class="btn-carrito btn btn-light btn-sm mt-2 col-8 col-lg" href="#"
+                            <a class="btn-carrito btn btn-light btn-sm mt-2 col-8 col-lg" onclick="agregarAlCarrito('${producto.codigo}')"
                                 role="button"><img class="carrito"
                                 src="./img/index/pagina-principal/card/cart3.svg" alt=""></a>
-                            <a class="btn-comprar btn btn-primary btn-sm mt-2 mx-3 col-8 col-lg" href="#"
+                            <a class="btn-comprar btn btn-primary btn-sm mt-2 mx-3 col-8 col-lg" href="/404.html"
                                 role="button">Comprar</a>
                         </div>
                         </div>

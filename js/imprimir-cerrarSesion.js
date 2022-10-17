@@ -1,14 +1,65 @@
 const arrayUsuarios = JSON.parse(localStorage.getItem("regUser")) || []
+const arrayProductos = JSON.parse(localStorage.getItem("productos")) || []
 
+const contenedorModal = document.querySelector(".contenedor-modal");
 let contenedor_card_carrito = document.querySelector("#body-modal");
-const divEnLinea = document.querySelector("#contenedorDeLogin")
-const cantidadCarrito = document.querySelector("#cantidadCarrito")
+const divEnLinea = document.querySelector("#contenedorDeLogin");
+const cantidadCarrito = document.querySelector("#cantidadCarrito");
+const mostrarCarrito = document.querySelector("#abrirCarrito")
+const moverModal = document.querySelector(".modalMostrar")
+
+
+
+const cerrarCarrito = () => {
+    moverModal.style.transform = "translatex(250%)"
+
+    setTimeout( () => {
+        contenedorModal.style.visibility = "hidden"
+        contenedorModal.style.opacity = "0"
+        moverModal.style.transform = "translatex(-250%)"
+    }, 1000)
+}
+
+const verCarrito = () => {
+    contenedorModal.style.zindex = "10000";
+      contenedorModal.style.opacity = "1"
+    contenedorModal.style.visibility = "visible"
+    moverModal.style.transform = "translatex(0%)"
+}
+
+const obtenerProducto = (codigo) => {
+    const product = arrayProductos.find(element => {
+        return element.codigo === codigo
+    })
+    return product
+}
 
 const existeUsuario = () => {
     const user = arrayUsuarios.some(element => {
         return element.userOn === "true"
     })
     return user
+}
+
+const obtenerUsuario = () => {
+    const contenedorUsuario = arrayUsuarios.find(element => {
+        return element.userOn === "true"
+    })
+    return contenedorUsuario
+}
+
+const agregarAlCarrito = (codigo) => {
+    let user, productoAGuardar
+    if (existeUsuario()){
+        user = obtenerUsuario();
+        productoAGuardar = obtenerProducto(codigo);
+        user.carrito.push(productoAGuardar);
+        arrayUsuarios.splice(arrayUsuarios.indexOf(user), 1, user);
+        localStorage.setItem("regUser",JSON.stringify(arrayUsuarios))
+        mostrarCarrito
+        cantidadProductosCarrito()
+        mostrarProductosCarrito()
+    }
 }
 
 const extraerUsuario = () => {
@@ -28,10 +79,22 @@ const cerrarSesion = () => {
     window.location.replace("index.html")
 }
 
+function cantidadProductosCarrito(){
+if (existeUsuario()){
+    mostrarProductosCarrito()
+    let numeroCarrito = extraerUsuario()
+    if (numeroCarrito.carrito.length > 0) {
+        cantidadCarrito.innerHTML = ""
+    cantidadCarrito.innerHTML = numeroCarrito.carrito.length
+    }
+} 
+}
+cantidadProductosCarrito()
 
-
-let mostrarProductosCarrito = () => {
+function mostrarProductosCarrito(){
     let paraMostrarCarrito = extraerUsuario()
+    if (paraMostrarCarrito.carrito.length > 0){
+        //cantidadProductosCarrito
     paraMostrarCarrito.carrito.forEach(producto => {
         contenedor_card_carrito.innerHTML +=`<div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0 d-flex flex-row">
@@ -65,16 +128,12 @@ let mostrarProductosCarrito = () => {
         </div>
         `;
     });
-
+    } else {
+        contenedor_card_carrito.innerHTML = `<h1>Carrito Vacio</h1>`
+    }
 }
 
-if (existeUsuario()){
-    mostrarProductosCarrito()
-    let numeroCarrito = extraerUsuario()
-    if (numeroCarrito.carrito.length > 0) {
-    cantidadCarrito.innerHTML = numeroCarrito.carrito.length
-    }
-} 
+
 
 const imprimirEnLinea = () => {
     let usuarioLinea;
@@ -83,7 +142,7 @@ const imprimirEnLinea = () => {
         if(usuarioLinea.admin === "true"){
             divEnLinea.innerHTML = `<li class="nav-item">
             <div class="dropdown">
-                <a class=" nav-link  dropdown-toggle me-4" type="button" id="dropdownMenu2"
+                <a class=" nav-link abrir-Carrito dropdown-toggle me-4" type="button" id="dropdownMenu2"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <img class="img-adm" src="./img/index/navbar/adm.png" alt="icono-adm"
                         style="width:1.5rem">
@@ -96,26 +155,26 @@ const imprimirEnLinea = () => {
                 </ul>
             </div>
         </li>
-        <li class="nav-item" onclick="cerrarSesion()">
+        <li class="nav-item abrir-Carrito" onclick="cerrarSesion()">
             <a class="nav-link adm-exit fw-bold" href="#"> <img src="./img/index/navbar/exit.svg" alt="icono-carrito" style="width:1.5rem"></a>
         </li> `
         } else if (usuarioLinea.admin === "") {
             divEnLinea.innerHTML += `
-        <li class="nav-item mx-lg-3 ">
+        <li class="nav-item abrir-Carrito mx-lg-3 ">
             <a class="nav-link " href="#"><img src="./img/index/navbar/usuario.png"
                     alt="img-usuario" style="width:1.6rem"></a>
         </li>
-        <li class="nav-item" onclick="cerrarSesion()">
+        <li class="nav-item abrir-Carrito" onclick="cerrarSesion()">
             <a class="nav-link " href="#"> <img src="./img/index/navbar/exit.svg"
                     alt="icono-carrito" style="width:1.6rem"></a>
         </li>`
         }
     } else {
         divEnLinea.innerHTML = `<li class="nav-item">
-        <a id="cerraSesion1" class="nav-link  fw-bold" href="/registro.html">Registrar</a>
+        <a id="cerraSesion1" class="nav-link abrir-Carrito fw-bold" href="/registro.html">Registrar</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link  fw-bold" href="/login.html">Login</a>
+        <a class="nav-link abrir-Carrito fw-bold" href="/login.html">Login</a>
     </li>`
     }
 }
